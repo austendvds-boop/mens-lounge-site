@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { featuredServices } from "@/data/services";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -19,7 +19,7 @@ export function ServiceTeaser() {
           {featuredServices.map((service) => (
             <Card key={service.title} className="overflow-hidden p-0">
               <div className="relative aspect-[4/3]">
-                {/* PLACEHOLDER: Replace with owner-supplied photo */}
+                {/* PLACEHOLDER: Replace with owner-supplied photo. Sources: 12304508, 7697492, 3998421, 7697360 on pexels.com */}
                 <Image src={service.image} alt={service.title} fill className="object-cover" />
               </div>
               <div className="space-y-4 p-6">
@@ -39,4 +39,3 @@ export function ServiceTeaser() {
     </section>
   );
 }
-

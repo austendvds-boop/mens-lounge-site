@@ -71,3 +71,39 @@
 - `origin` now points at: `https://github.com/austendvds-boop/mens-lounge-site.git`
 - Branch normalized to `main`.
 - Commit pushed to `origin/main` with message: `feat: mens lounge site foundation + home page`.
+
+## 2026-03-05 — Batch 1 Clean-Start Rebuild (Subagent pass)
+
+### What changed
+- Ran the required clean-start reset against `origin/main` (`fetch`, `checkout -B`, `reset --hard`, `clean -fd`) before implementation.
+- Revalidated and tightened foundation config for static export and brand token consistency.
+- Expanded `locations` data structure with schema-ready fields (postal code, coordinates, structured hours, schema naming).
+- Updated Local Business JSON-LD output to include full `@graph` entries for both locations with opening hours, geo coordinates, and social profile.
+- Enforced the required primary booking URL across all home-page booking CTAs.
+- Replaced irrelevant placeholder photography with barbershop-specific placeholders and added new location placeholder SVG assets.
+- Added task checklist at `docs/implementation-plan.md`.
+
+### Files touched
+- `src/lib/constants.ts`
+- `src/data/locations.ts`
+- `src/components/seo/LocalBusinessSchema.tsx`
+- `src/components/sections/Hero.tsx`
+- `src/components/sections/LocationCards.tsx`
+- `src/components/sections/ServiceTeaser.tsx`
+- `public/images/hero/barbershop-interior-01.jpg`
+- `public/images/hero/barber-tools-detail-01.jpg`
+- `public/images/services/haircut-fade.jpg`
+- `public/images/services/hot-towel-shave.jpg`
+- `public/images/services/beard-trim.jpg`
+- `public/images/services/kids-cut.jpg`
+- `public/images/locations/norterra-placeholder.svg`
+- `public/images/locations/peoria-placeholder.svg`
+- `docs/implementation-plan.md`
+
+### Verification
+- `npm run build` passes.
+- Local home route verification against dev server (`http://127.0.0.1:3050/`) returned status `200`.
+- Verified rendered home HTML includes:
+  - Primary booking URL: `https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix`
+  - Norterra phone link: `tel:+16235563193`
+  - Peoria phone link: `tel:+16234409412`

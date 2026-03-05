@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { locations } from "@/data/locations";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -20,13 +20,8 @@ export function LocationCards() {
           {locations.map((location) => (
             <Card key={location.slug} className="overflow-hidden p-0">
               <div className="relative aspect-[16/9]">
-                {/* PLACEHOLDER: Replace with owner-supplied photo */}
-                <Image
-                  src={location.image}
-                  alt={`${location.title} location`}
-                  fill
-                  className="object-cover"
-                />
+                {/* PLACEHOLDER: Replace with owner-supplied location photo. */}
+                <Image src={location.image} alt={`${location.title} location`} fill className="object-cover" />
               </div>
 
               <div className="space-y-4 p-6">
@@ -80,4 +75,3 @@ export function LocationCards() {
     </section>
   );
 }
-

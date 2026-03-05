@@ -75,3 +75,29 @@
 - Batch 1 foundation + home page implementation is complete and build-clean.
 - Committed and pushed to `origin/main`.
 - Commit message used: `feat: mens lounge site foundation + home page`
+
+## Batch 1 Clean-Start Rebuild — 2026-03-05
+
+### Clean-start actions completed first
+- `git fetch origin main`
+- `git checkout -B main origin/main`
+- `git reset --hard origin/main`
+- `git clean -fd`
+
+### Additional implementation updates
+- Replaced low-relevance placeholder images with barbershop-relevant placeholders for hero and service sections.
+- Added explicit location placeholder SVGs:
+  - `public/images/locations/norterra-placeholder.svg`
+  - `public/images/locations/peoria-placeholder.svg`
+- Enhanced `src/data/locations.ts` with schema-friendly metadata:
+  - `schemaName`, `postalCode`, `latitude`, `longitude`, `openingHoursSpecification`
+- Updated `LocalBusinessSchema` to output full structured data for both locations (`@graph`, opening hours, geo, sameAs).
+- Locked booking CTA usage to the required primary URL for this batch.
+- Added `docs/implementation-plan.md` checklist for batch execution tracking.
+
+### Verification rerun
+- `npm run build` → pass
+- Local home render check (`http://127.0.0.1:3050/`) → HTTP 200
+- Confirmed CTA links present in rendered HTML:
+  - booking URL
+  - both `tel:` links

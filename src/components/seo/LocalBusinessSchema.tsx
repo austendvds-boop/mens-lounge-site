@@ -1,25 +1,39 @@
-import { locations } from "@/data/locations";
-import { SITE_URL } from "@/lib/constants";
+﻿import { locations } from "@/data/locations";
+import { INSTAGRAM_URL, SITE_URL } from "@/lib/constants";
 
 export function LocalBusinessSchema() {
-  const schema = locations.map((location) => ({
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "BarberShop",
-    name: `Men's Lounge Barbershop — ${location.title}`,
-    image: `${SITE_URL}${location.image}`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: location.addressLine1,
-      addressLocality: location.city,
-      addressRegion: "AZ",
-      postalCode: location.slug === "norterra" ? "85085" : "85383",
-      addressCountry: "US",
-    },
-    telephone: location.phoneHref.replace("tel:", ""),
-    email: location.email,
-    url: `${SITE_URL}/#${location.slug}`,
-    priceRange: "$$",
-  }));
+    "@graph": locations.map((location) => ({
+      "@type": "BarberShop",
+      name: location.schemaName,
+      image: `${SITE_URL}${location.image}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: location.addressLine1,
+        addressLocality: location.city,
+        addressRegion: "AZ",
+        postalCode: location.postalCode,
+        addressCountry: "US",
+      },
+      telephone: `+1${location.phoneHref.replace("tel:+1", "")}`,
+      email: location.email,
+      url: `${SITE_URL}/locations/${location.slug}`,
+      openingHoursSpecification: location.openingHoursSpecification.map((item) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: item.dayOfWeek,
+        opens: item.opens,
+        closes: item.closes,
+      })),
+      priceRange: "$$",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: location.latitude,
+        longitude: location.longitude,
+      },
+      sameAs: [INSTAGRAM_URL],
+    })),
+  };
 
   return (
     <script
@@ -28,4 +42,3 @@ export function LocalBusinessSchema() {
     />
   );
 }
-

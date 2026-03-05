@@ -1,11 +1,11 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { PRIMARY_BOOKING_URL } from "@/lib/constants";
 
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-brand-navy py-28 text-white md:py-36">
-      {/* PLACEHOLDER: Replace with owner-supplied photo */}
+      {/* PLACEHOLDER: Replace with owner-supplied photo. Source: https://www.pexels.com/photo/the-interior-of-a-barber-shop-7518728/ */}
       <Image
         src="/images/hero/barbershop-interior-01.jpg"
         alt="Interior of Men's Lounge Barbershop"
@@ -35,7 +35,11 @@ export function Hero() {
             >
               Book Your Cut
             </Button>
-            <Button href="/#services" variant="secondary" className="min-w-44 border-white bg-white/10 text-white hover:bg-white hover:text-brand-navy">
+            <Button
+              href="/#services"
+              variant="secondary"
+              className="min-w-44 border-white bg-white/10 text-white hover:bg-white hover:text-brand-navy"
+            >
               View Services
             </Button>
           </div>
@@ -44,4 +48,3 @@ export function Hero() {
     </section>
   );
 }
-

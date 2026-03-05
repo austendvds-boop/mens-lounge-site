@@ -25,3 +25,10 @@
 - Service teaser card link copy renders as `Learn More →`.
 - Testimonial cards render visible 5-star row (`★★★★★`).
 - Hero and footer copy render apostrophes correctly after lint-safe escaping.
+
+## Clean-Start Rebuild Addendum (2026-03-05)
+- Hero and service images now use barbershop-relevant placeholder photography.
+- Location cards now use branded placeholder location artwork (`norterra-placeholder.svg`, `peoria-placeholder.svg`) pending owner-supplied photos.
+- All booking CTAs on `/` resolve to:
+  - `https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix`
+- Home route smoke test at `http://127.0.0.1:3050/` returned `200` and contained all required booking/call links.

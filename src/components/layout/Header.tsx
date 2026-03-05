@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { PRIMARY_BOOKING_URL } from "@/lib/constants";
 import { MobileNav } from "./MobileNav";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Locations", href: "/#locations" },
-  { label: "Services", href: "/#services" },
-  { label: "Reviews", href: "/#testimonials" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Locations", href: "/locations" },
+  { label: "Services", href: "/services" },
+  { label: "Book Now", href: "/booking" },
+  { label: "Contact", href: "/contact" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export function Header() {
@@ -40,12 +40,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button
-            href={PRIMARY_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            ariaLabel="Book your cut now"
-          >
+          <Button href="/booking" ariaLabel="Book your cut now">
             Book Now
           </Button>
         </div>

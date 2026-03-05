@@ -17,4 +17,17 @@
 - [x] Update docs (`CODER-CONTEXT`, `ralph-context`, `UI-VERIFICATION`)
 - [x] Commit and push to `origin/main`
 
+## Batch 2 — Interior Pages + SEO
+
+- [x] Read blueprint before implementation
+- [x] Build interior routes (`/locations`, `/locations/norterra`, `/locations/peoria`, `/services`, `/booking`, `/contact`, `/faq`)
+- [x] Add per-page metadata titles/descriptions from blueprint SEO table
+- [x] Add location schema output for detail pages and FAQPage schema on `/faq`
+- [x] Add map embeds for locations overview, location detail pages, and contact page
+- [x] Add FAQ accordion interactions with analytics `faq_expand` hook
+- [x] Add booking selector with Squire links and Peoria fallback TODO notice
+- [x] Verify build and route/link/phone CTA checks
+- [x] Update docs (`CODER-CONTEXT`, `ralph-context`, `UI-VERIFICATION`, `ENV-VARS`)
+- [x] Commit and push to `origin/main`
+
 

@@ -1,4 +1,4 @@
-﻿import { MAPS_URLS, PRIMARY_BOOKING_URL } from "@/lib/constants";
+﻿import { MAPS_URLS, NORTERRA_BOOKING_URL, PEORIA_BOOKING_URL } from "@/lib/constants";
 
 export type OpeningHoursSpecification = {
   dayOfWeek: string | string[];
@@ -56,7 +56,7 @@ export const locations: Location[] = [
     postalCode: "85085",
     latitude: 33.7172,
     longitude: -112.107,
-    bookingUrl: PRIMARY_BOOKING_URL,
+    bookingUrl: NORTERRA_BOOKING_URL,
     directionsUrl: MAPS_URLS.norterra,
     image: "/images/locations/norterra-placeholder.svg",
   },
@@ -87,7 +87,7 @@ export const locations: Location[] = [
     postalCode: "85383",
     latitude: 33.7181,
     longitude: -112.237,
-    bookingUrl: PRIMARY_BOOKING_URL,
+    bookingUrl: PEORIA_BOOKING_URL,
     directionsUrl: MAPS_URLS.peoria,
     image: "/images/locations/peoria-placeholder.svg",
   },

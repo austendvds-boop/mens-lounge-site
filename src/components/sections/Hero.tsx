@@ -1,6 +1,5 @@
 ﻿import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { PRIMARY_BOOKING_URL } from "@/lib/constants";
 
 export function Hero() {
   return (
@@ -27,16 +26,11 @@ export function Hero() {
             Classic cuts. Hot towel shaves. Two locations. Walk-ins welcome.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button
-              href={PRIMARY_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="min-w-44"
-            >
+            <Button href="/booking" className="min-w-44">
               Book Your Cut
             </Button>
             <Button
-              href="/#services"
+              href="/services"
               variant="secondary"
               className="min-w-44 border-white bg-white/10 text-white hover:bg-white hover:text-brand-navy"
             >

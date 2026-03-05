@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { INSTAGRAM_URL, PRIMARY_BOOKING_URL } from "@/lib/constants";
+import { INSTAGRAM_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -11,12 +11,7 @@ export function Footer() {
           <p className="max-w-sm text-sm text-white/85">
             Classic cuts. Modern style. Two Phoenix-area locations.
           </p>
-          <Button
-            href={PRIMARY_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="!px-5 !py-2"
-          >
+          <Button href="/booking" className="!px-5 !py-2">
             Book Now
           </Button>
         </div>
@@ -27,10 +22,11 @@ export function Footer() {
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-white/90">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/#locations">Locations</Link></li>
-            <li><Link href="/#services">Services & Prices</Link></li>
-            <li><Link href="/#testimonials">Reviews</Link></li>
-            <li><Link href="/#faq">FAQ</Link></li>
+            <li><Link href="/locations">Locations</Link></li>
+            <li><Link href="/services">Services & Prices</Link></li>
+            <li><Link href="/booking">Book Now</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/faq">FAQ</Link></li>
           </ul>
         </div>
 

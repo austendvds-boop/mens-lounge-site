@@ -1,6 +1,6 @@
-# Coder Context
+﻿# Coder Context
 
-## 2026-03-05 � Batch 1 Foundation
+## 2026-03-05 ï¿½ Batch 1 Foundation
 
 ### What changed
 - Scaffolded a brand-new Next.js 14 App Router + TypeScript + Tailwind project.
@@ -41,13 +41,13 @@
 ### Build status
 - `npm run build` passes in this batch.
 
-## 2026-03-05 — Batch 1 Retry + Git Remote Repair
+## 2026-03-05 â€” Batch 1 Retry + Git Remote Repair
 
 ### What changed
 - Fixed `SectionHeading` prop compatibility so sections using `description` and `centered` build correctly.
 - Corrected visible UI text issues:
-  - Restored testimonial star row to `★★★★★`.
-  - Updated service teaser link copy to `Learn More →`.
+  - Restored testimonial star row to `â˜…â˜…â˜…â˜…â˜…`.
+  - Updated service teaser link copy to `Learn More â†’`.
   - Escaped apostrophes that were tripping lint in hero/footer copy.
 - Verified home page response over local dev server (`http://localhost:3050`) and confirmed booking + phone CTA hrefs are present.
 - Repaired GitHub remote setup by creating and wiring `origin` to the project repo.
@@ -72,7 +72,7 @@
 - Branch normalized to `main`.
 - Commit pushed to `origin/main` with message: `feat: mens lounge site foundation + home page`.
 
-## 2026-03-05 — Batch 1 Clean-Start Rebuild (Subagent pass)
+## 2026-03-05 â€” Batch 1 Clean-Start Rebuild (Subagent pass)
 
 ### What changed
 - Ran the required clean-start reset against `origin/main` (`fetch`, `checkout -B`, `reset --hard`, `clean -fd`) before implementation.
@@ -107,3 +107,50 @@
   - Primary booking URL: `https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix`
   - Norterra phone link: `tel:+16235563193`
   - Peoria phone link: `tel:+16234409412`
+
+## 2026-03-05 — Batch 2 Interior Pages + SEO
+
+### What changed
+- Implemented all interior routes:
+  - `/locations`
+  - `/locations/norterra`
+  - `/locations/peoria`
+  - `/services`
+  - `/booking`
+  - `/contact`
+  - `/faq`
+- Added per-page metadata for every interior page using the blueprint titles/descriptions.
+- Added map embeds for locations overview, both location detail pages, and contact page.
+- Extended `LocalBusinessSchema` to support single-location output, then applied it on Norterra and Peoria pages.
+- Added FAQ accordion interaction tracking (`faq_expand`) with a dedicated client accordion component.
+- Added booking selector cards with tracked booking buttons and clear Peoria fallback TODO copy.
+- Updated global nav links (header/mobile/footer) to point to interior routes.
+- Added reusable `MapEmbed` and `TrackedButton` components for cleaner page composition.
+
+### Key files touched
+- `src/app/locations/page.tsx`
+- `src/app/locations/norterra/page.tsx`
+- `src/app/locations/peoria/page.tsx`
+- `src/app/services/page.tsx`
+- `src/app/booking/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/app/faq/page.tsx`
+- `src/components/sections/FAQAccordion.tsx`
+- `src/components/ui/MapEmbed.tsx`
+- `src/components/analytics/TrackedButton.tsx`
+- `src/components/seo/LocalBusinessSchema.tsx`
+- `src/components/layout/Header.tsx`
+- `src/components/layout/MobileNav.tsx`
+- `src/components/layout/Footer.tsx`
+- `src/components/sections/Hero.tsx`
+- `src/components/sections/CTABanner.tsx`
+- `src/data/locations.ts`
+- `src/lib/constants.ts`
+- `docs/implementation-plan.md`
+
+### Verification
+- `npm run build` passes.
+- Static route checks confirmed all required interior routes render in `out/`.
+- Verified booking link and both phone CTA links in built `/booking` output.
+- Verified both phone and email CTA links in built `/contact` output.
+

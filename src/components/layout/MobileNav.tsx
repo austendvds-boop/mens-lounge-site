@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { PRIMARY_BOOKING_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 type NavLink = {
@@ -72,11 +71,10 @@ export function MobileNav({ links }: MobileNavProps) {
 
             <div className="mt-8">
               <Button
-                href={PRIMARY_BOOKING_URL}
+                href="/booking"
                 className="w-full"
-                target="_blank"
-                rel="noopener noreferrer"
                 ariaLabel="Book now"
+                onClick={() => setIsOpen(false)}
               >
                 Book Now
               </Button>

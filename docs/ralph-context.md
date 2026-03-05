@@ -1,6 +1,6 @@
-# Ralph Context
+﻿# Ralph Context
 
-## Batch 1 � 2026-03-05
+## Batch 1 ï¿½ 2026-03-05
 
 ### Files created/modified
 - Project scaffold files (`package.json`, `tsconfig.json`, `.eslintrc.json`, `postcss.config.mjs`, etc.)
@@ -56,13 +56,13 @@
 - Peoria booking URL currently falls back to Norterra until owner provides final Peoria Squire link.
 - Placeholder Unsplash images and placeholder logo are clearly marked in code comments for replacement.
 
-## Batch 1 Retry — 2026-03-05
+## Batch 1 Retry â€” 2026-03-05
 
 ### Retry fixes completed
 - Repaired `SectionHeading` API so all existing section calls (`description`, `centered`) are type-safe.
 - Fixed broken display text in service/testimonial sections:
-  - `Learn More →`
-  - `★★★★★`
+  - `Learn More â†’`
+  - `â˜…â˜…â˜…â˜…â˜…`
 - Escaped apostrophes in Hero/Footer to satisfy lint + production build.
 - Re-verified static build success and local home-route response.
 
@@ -76,7 +76,7 @@
 - Committed and pushed to `origin/main`.
 - Commit message used: `feat: mens lounge site foundation + home page`
 
-## Batch 1 Clean-Start Rebuild — 2026-03-05
+## Batch 1 Clean-Start Rebuild â€” 2026-03-05
 
 ### Clean-start actions completed first
 - `git fetch origin main`
@@ -96,8 +96,34 @@
 - Added `docs/implementation-plan.md` checklist for batch execution tracking.
 
 ### Verification rerun
-- `npm run build` → pass
-- Local home render check (`http://127.0.0.1:3050/`) → HTTP 200
+- `npm run build` â†’ pass
+- Local home render check (`http://127.0.0.1:3050/`) â†’ HTTP 200
 - Confirmed CTA links present in rendered HTML:
   - booking URL
   - both `tel:` links
+
+## Batch 2 — Interior Pages + SEO — 2026-03-05
+
+### Routes completed
+- `/locations`
+- `/locations/norterra`
+- `/locations/peoria`
+- `/services`
+- `/booking`
+- `/contact`
+- `/faq`
+
+### Highlights
+- Added page-level metadata for all interior routes per blueprint SEO table.
+- Added map embeds (overview, both location pages, contact page).
+- Added location-specific LocalBusiness schema on detail pages and FAQPage schema on `/faq`.
+- Added FAQ accordion with `faq_expand` analytics event hook.
+- Added booking selector cards and retained Peoria fallback with explicit TODO notice.
+- Updated header/mobile/footer navigation to use interior route URLs.
+
+### Verification
+- `npm run build` passed.
+- Confirmed static output exists for all required routes.
+- Confirmed booking URL and phone links in `/booking` output.
+- Confirmed phone and email CTAs in `/contact` output.
+

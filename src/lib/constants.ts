@@ -29,3 +29,15 @@ export const MAPS_URLS = {
     "https://maps.google.com/?q=2501+W+Happy+Valley+Rd+Phoenix+AZ+85085",
   peoria: "https://maps.google.com/?q=6791+W+Happy+Valley+Rd+Peoria+AZ+85383",
 } as const;
+
+export const MAP_EMBED_URLS = {
+  norterra:
+    process.env.NEXT_PUBLIC_GOOGLE_MAPS_NORTERRA ??
+    "https://maps.google.com/maps?q=2501%20W%20Happy%20Valley%20Rd%20Phoenix%20AZ%2085085&t=&z=14&ie=UTF8&iwloc=&output=embed",
+  peoria:
+    process.env.NEXT_PUBLIC_GOOGLE_MAPS_PEORIA ??
+    "https://maps.google.com/maps?q=6791%20W%20Happy%20Valley%20Rd%20Peoria%20AZ%2085383&t=&z=14&ie=UTF8&iwloc=&output=embed",
+} as const;
+
+export const CONTACT_FORM_ENDPOINT =
+  process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT ?? "https://formspree.io/f/replace-this-id";

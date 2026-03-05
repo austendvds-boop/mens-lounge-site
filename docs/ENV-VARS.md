@@ -24,3 +24,18 @@
 - **Default:** `https://mensloungebarbershop.com`
 - **Used for:** Metadata base URL and schema absolute image URLs.
 - **Source:** Production domain.
+
+### `NEXT_PUBLIC_GOOGLE_MAPS_NORTERRA`
+- **Default:** Embedded map URL for Norterra address.
+- **Used for:** iframe embed on `/locations`, `/locations/norterra`, and `/contact`.
+- **Source:** Google Maps share/embed URL for Norterra.
+
+### `NEXT_PUBLIC_GOOGLE_MAPS_PEORIA`
+- **Default:** Embedded map URL for Peoria address.
+- **Used for:** iframe embed on `/locations`, `/locations/peoria`, and `/contact`.
+- **Source:** Google Maps share/embed URL for Peoria.
+
+### `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT`
+- **Default:** `https://formspree.io/f/replace-this-id`
+- **Used for:** contact form POST target on `/contact`.
+- **Source:** Formspree form endpoint (or equivalent form service endpoint).

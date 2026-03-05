@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/Button";
-import { PRIMARY_BOOKING_URL } from "@/lib/constants";
 
 export function CTABanner() {
   return (
@@ -11,12 +10,7 @@ export function CTABanner() {
         </p>
 
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button
-            href={PRIMARY_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="min-w-40"
-          >
+          <Button href="/booking" className="min-w-40">
             Book Now
           </Button>
           <Button href="tel:+16235563193" variant="secondary" className="min-w-40">

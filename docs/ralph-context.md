@@ -177,7 +177,7 @@
   - Preserved skip-link and FAQ ARIA relationships
 - Performance polish:
   - Added image `sizes` + `loading="lazy"` for non-hero image components
-  - Maintained fixed aspect-ratio wrappers for CLS-safe image rendering
+  - Maintained fixed aspect-ratio wrappers for CLS-safe rendering
 - Replaced `docs/UI-VERIFICATION.md` with architect’s screenshot verification spec.
 - Updated `README.md` with real build/deploy workflow and route smoke test steps.
 - Updated `docs/implementation-plan.md` with Batch 3 completion checklist.
@@ -204,3 +204,49 @@
 - Exported HTML checks:
   - no `TODO` text on affected customer pages
   - map embed URLs present on `/locations`, `/locations/norterra`, `/locations/peoria`, `/contact`
+
+## Batch 1 Motion Design Pass — 2026-03-06
+
+### Completed motion system work
+- Added motion design tokens in `src/app/globals.css`:
+  - durations: `--motion-duration-fast/base/slow`
+  - easing curves: `--motion-ease-standard/soft`
+  - movement distances: `--motion-distance-sm/md`
+- Added reusable motion utilities for premium micro-interactions:
+  - `.motion-link` (underline draw + subtle color transition)
+  - `.motion-surface` (subtle hover lift + shadow easing)
+  - `.motion-fade-up` (gentle intro sequence)
+  - `.motion-reveal` (scroll reveal state machine styles)
+- Added full reduced-motion fallback in CSS (`prefers-reduced-motion`) to disable transforms/animations cleanly.
+- Added lightweight intersection-observer reveal helper:
+  - `src/components/motion/MotionReveal.tsx`
+
+### Pages/components updated with motion
+- Homepage motion pass:
+  - `src/components/sections/Hero.tsx`
+  - `src/components/sections/LocationCards.tsx`
+  - `src/components/sections/ServiceTeaser.tsx`
+  - `src/components/sections/Testimonials.tsx`
+  - `src/components/sections/DiscountBanner.tsx`
+  - `src/components/sections/CTABanner.tsx`
+  - `src/app/page.tsx`
+- Interior motion pass:
+  - `src/app/booking/page.tsx`
+  - `src/app/locations/page.tsx`
+  - `src/app/locations/norterra/page.tsx`
+  - `src/app/locations/peoria/page.tsx`
+  - `src/app/services/page.tsx`
+  - `src/app/contact/page.tsx`
+  - `src/app/faq/page.tsx`
+- Navigation + interaction polish:
+  - `src/components/layout/Header.tsx`
+  - `src/components/layout/MobileNav.tsx`
+  - `src/components/layout/Footer.tsx`
+  - `src/components/ui/Button.tsx`
+  - `src/components/ui/Card.tsx`
+  - `src/components/ui/MapEmbed.tsx`
+  - `src/components/sections/FAQAccordion.tsx`
+
+### Verification completed in this batch
+- `npm run build` → pass (Next build + next-sitemap).
+- Motion implementation stays CSS-first + lightweight observer (no heavy animation library added).

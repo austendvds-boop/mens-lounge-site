@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import type { CSSProperties } from "react";
 import { Button } from "@/components/ui/Button";
 
 export function Hero() {
@@ -17,16 +18,28 @@ export function Hero() {
 
       <div className="container-shell relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold">
+          <p
+            className="motion-fade-up text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold"
+            style={{ "--reveal-delay": "40ms" } as CSSProperties}
+          >
             Men&apos;s Lounge Barbershop
           </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-tight text-white md:text-6xl">
+          <h1
+            className="motion-fade-up mt-4 text-4xl font-extrabold leading-tight text-white md:text-6xl"
+            style={{ "--reveal-delay": "120ms" } as CSSProperties}
+          >
             Phoenix&apos;s Premier Men&apos;s Barbershop
           </h1>
-          <p className="mt-5 text-lg text-white/90 md:text-xl">
+          <p
+            className="motion-fade-up mt-5 text-lg text-white/90 md:text-xl"
+            style={{ "--reveal-delay": "190ms" } as CSSProperties}
+          >
             Classic cuts. Hot towel shaves. Two locations. Walk-ins welcome.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div
+            className="motion-fade-up mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            style={{ "--reveal-delay": "260ms" } as CSSProperties}
+          >
             <Button href="/booking" className="min-w-44">
               Book Your Cut
             </Button>

@@ -279,3 +279,37 @@
 - Built output checks pass:
   - no public `TODO` text in booking and Peoria location pages
   - map embed URLs are present in `/locations`, `/locations/norterra`, `/locations/peoria`, and `/contact`
+
+## 2026-03-06 — Batch 1 Motion Design Pass (Homepage + Interior)
+
+### What changed
+- Added a shared motion token system in `src/app/globals.css`:
+  - `--motion-duration-fast/base/slow`
+  - `--motion-ease-standard/soft`
+  - `--motion-distance-sm/md`
+- Added reusable motion utility classes for maintainable animation behavior:
+  - `.motion-link` for subtle nav/link underline motion
+  - `.motion-surface` for gentle lift/shadow micro-interactions
+  - `.motion-fade-up` for hero intro motion
+  - `.motion-reveal` for observer-driven section/card reveals
+- Added full `prefers-reduced-motion` support in global CSS so transitions/animations cleanly disable.
+- Added a lightweight intersection-observer helper at `src/components/motion/MotionReveal.tsx`.
+- Applied motion pass across homepage sections and all required interior routes:
+  - Home: `src/app/page.tsx`, `Hero`, `LocationCards`, `ServiceTeaser`, `Testimonials`, `DiscountBanner`, `CTABanner`
+  - Interior: `src/app/booking/page.tsx`, `src/app/locations/page.tsx`, `src/app/locations/norterra/page.tsx`, `src/app/locations/peoria/page.tsx`, `src/app/services/page.tsx`, `src/app/contact/page.tsx`, `src/app/faq/page.tsx`
+- Added nav and interaction polish to layout/ui components:
+  - `src/components/layout/Header.tsx`
+  - `src/components/layout/MobileNav.tsx`
+  - `src/components/layout/Footer.tsx`
+  - `src/components/ui/Button.tsx`
+  - `src/components/ui/Card.tsx`
+  - `src/components/ui/MapEmbed.tsx`
+  - `src/components/sections/FAQAccordion.tsx`
+
+### Decisions / notes
+- Stayed CSS-first for performance and smooth mobile behavior.
+- Avoided adding any heavy animation library.
+- Observer reveal logic only runs when needed and exits once content is visible.
+
+### Verification
+- `npm run build` passes clean (Next build + `next-sitemap`).

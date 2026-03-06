@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-brand-navy/10 bg-white/95 backdrop-blur">
       <div className="container-shell flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Men's Lounge home">
+        <Link href="/" className="motion-surface flex items-center gap-3" aria-label="Men's Lounge home">
           {/* PLACEHOLDER: Replace with owner-supplied logo */}
           <Image
             src="/images/logo.svg"
@@ -32,7 +32,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-brand-charcoal transition hover:text-brand-navy"
+              className="motion-link text-sm font-medium text-brand-charcoal hover:text-brand-navy"
             >
               {link.label}
             </Link>

@@ -68,3 +68,15 @@
 - [x] Run build and required route checks
 - [x] Commit and push to `origin/main`
 - [x] Verify production deployment status and smoke-check affected routes
+
+## Batch 1 — Motion Design Pass (Homepage + Interior)
+
+- [x] Add shared motion token system (durations, easing, distances) in global styles
+- [x] Add lightweight intersection-observer reveal utility with reduced-motion handling
+- [x] Apply subtle hero intro motion and staggered section/card reveals on home page
+- [x] Apply subtle reveal + interaction motion on interior routes (`/booking`, `/locations`, `/locations/norterra`, `/locations/peoria`, `/services`, `/contact`, `/faq`)
+- [x] Add premium micro-interactions for nav links, cards, buttons, and mobile menu controls
+- [x] Respect `prefers-reduced-motion` across animations/transforms/transitions
+- [x] Verify build passes (`npm run build`)
+- [x] Commit and push to `origin/main`
+- [x] Verify production deployment READY and smoke-check required routes

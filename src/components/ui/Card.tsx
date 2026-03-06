@@ -10,7 +10,7 @@ export function Card({ children, className }: CardProps) {
   return (
     <article
       className={cn(
-        "rounded-xl border border-brand-gold/20 bg-white p-6 shadow-md",
+        "motion-surface rounded-xl border border-brand-gold/20 bg-white p-6 shadow-md",
         className
       )}
     >

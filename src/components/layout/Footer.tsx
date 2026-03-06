@@ -21,12 +21,12 @@ export function Footer() {
             Quick Links
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-white/90">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/locations">Locations</Link></li>
-            <li><Link href="/services">Services & Prices</Link></li>
-            <li><Link href="/booking">Book Now</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
+            <li><Link href="/" className="motion-link inline-block">Home</Link></li>
+            <li><Link href="/locations" className="motion-link inline-block">Locations</Link></li>
+            <li><Link href="/services" className="motion-link inline-block">Services & Prices</Link></li>
+            <li><Link href="/booking" className="motion-link inline-block">Book Now</Link></li>
+            <li><Link href="/contact" className="motion-link inline-block">Contact</Link></li>
+            <li><Link href="/faq" className="motion-link inline-block">FAQ</Link></li>
           </ul>
         </div>
 
@@ -34,9 +34,9 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-gold">
             Contact
           </h3>
-          <p>Norterra: <a href="tel:+16235563193" className="hover:underline">(623) 556-3193</a></p>
-          <p>Peoria: <a href="tel:+16234409412" className="hover:underline">(623) 440-9412</a></p>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-block hover:underline">
+          <p>Norterra: <a href="tel:+16235563193" className="motion-link inline-block">(623) 556-3193</a></p>
+          <p>Peoria: <a href="tel:+16234409412" className="motion-link inline-block">(623) 440-9412</a></p>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="motion-link inline-block">
             Instagram
           </a>
         </div>

@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { TrackedButton } from "@/components/analytics/TrackedButton";
+import { MotionReveal } from "@/components/motion/MotionReveal";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { locations } from "@/data/locations";
@@ -19,51 +20,57 @@ export default function BookingPage() {
     <>
       <section className="bg-brand-cream py-14 md:py-20">
         <div className="container-shell">
-          <SectionHeading
-            eyebrow="Booking"
-            title="Book Your Appointment"
-            description="Pick your location and book in under a minute."
-            centered
-          />
+          <MotionReveal>
+            <SectionHeading
+              eyebrow="Booking"
+              title="Book Your Appointment"
+              description="Pick your location and book in under a minute."
+              centered
+            />
+          </MotionReveal>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {locations.map((location) => (
-              <article key={location.slug} className="rounded-xl2 border border-brand-navy/15 bg-white p-6 shadow-card">
-                <h2 className="text-2xl font-bold">{location.title}</h2>
-                <p className="mt-3 text-sm text-brand-slate">{location.addressLine1}</p>
-                <p className="text-sm text-brand-slate">{location.addressLine2}</p>
-                <a href={location.phoneHref} className="mt-2 block text-sm font-semibold text-brand-navy hover:underline">
-                  {location.phoneDisplay}
-                </a>
+            {locations.map((location, index) => (
+              <MotionReveal key={location.slug} delayMs={index * 70}>
+                <article className="motion-surface rounded-xl2 border border-brand-navy/15 bg-white p-6 shadow-card">
+                  <h2 className="text-2xl font-bold">{location.title}</h2>
+                  <p className="mt-3 text-sm text-brand-slate">{location.addressLine1}</p>
+                  <p className="text-sm text-brand-slate">{location.addressLine2}</p>
+                  <a href={location.phoneHref} className="motion-link mt-2 block w-fit text-sm font-semibold text-brand-navy">
+                    {location.phoneDisplay}
+                  </a>
 
-                {location.slug === "peoria" && isPeoriaFallbackLink ? (
-                  <p className="mt-4 rounded-lg border border-brand-gold/45 bg-brand-gold/15 px-3 py-2 text-sm text-brand-charcoal">
-                    Online booking for Peoria opens in our shared booking page right now.
-                  </p>
-                ) : null}
+                  {location.slug === "peoria" && isPeoriaFallbackLink ? (
+                    <p className="mt-4 rounded-lg border border-brand-gold/45 bg-brand-gold/15 px-3 py-2 text-sm text-brand-charcoal">
+                      Online booking for Peoria opens in our shared booking page right now.
+                    </p>
+                  ) : null}
 
-                <TrackedButton
-                  href={location.bookingUrl}
-                  className="mt-5 w-full"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  eventName="book_now_click"
-                  eventParams={{ source: "booking_page", location: location.slug }}
-                >
-                  {location.slug === "norterra" ? "Book at Norterra" : "Book at Peoria"}
-                </TrackedButton>
-              </article>
+                  <TrackedButton
+                    href={location.bookingUrl}
+                    className="mt-5 w-full"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    eventName="book_now_click"
+                    eventParams={{ source: "booking_page", location: location.slug }}
+                  >
+                    {location.slug === "norterra" ? "Book at Norterra" : "Book at Peoria"}
+                  </TrackedButton>
+                </article>
+              </MotionReveal>
             ))}
           </div>
 
-          <div className="mt-10 rounded-xl2 border border-brand-navy/15 bg-white p-6 text-center">
-            <p className="text-brand-charcoal">
-              Prefer to walk in? We welcome walk-ins at both locations during all business hours.
-            </p>
-            <p className="mt-2 text-sm text-brand-slate">
-              Call us: Norterra (623) 556-3193 · Peoria (623) 440-9412
-            </p>
-          </div>
+          <MotionReveal delayMs={120}>
+            <div className="motion-surface mt-10 rounded-xl2 border border-brand-navy/15 bg-white p-6 text-center">
+              <p className="text-brand-charcoal">
+                Prefer to walk in? We welcome walk-ins at both locations during all business hours.
+              </p>
+              <p className="mt-2 text-sm text-brand-slate">
+                Call us: Norterra (623) 556-3193 · Peoria (623) 440-9412
+              </p>
+            </div>
+          </MotionReveal>
         </div>
       </section>
 

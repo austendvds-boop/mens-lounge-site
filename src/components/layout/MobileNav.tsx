@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { type CSSProperties, useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 type NavLink = {
@@ -44,7 +44,7 @@ export function MobileNav({ links }: MobileNavProps) {
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-nav-drawer"
-        className="rounded-md border border-brand-navy/20 p-2 text-brand-navy"
+        className="motion-surface rounded-md border border-brand-navy/20 p-2 text-brand-navy"
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
@@ -62,7 +62,8 @@ export function MobileNav({ links }: MobileNavProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile menu"
-            className="fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm bg-white p-6 shadow-2xl"
+            className="motion-fade-up fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm bg-white p-6 shadow-2xl"
+            style={{ "--reveal-delay": "40ms" } as CSSProperties}
           >
             <div className="mb-8 flex items-center justify-between">
               <p className="text-lg font-bold text-brand-navy">Menu</p>
@@ -70,7 +71,7 @@ export function MobileNav({ links }: MobileNavProps) {
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close menu"
-                className="rounded-md border border-brand-navy/20 p-2 text-brand-navy"
+                className="motion-surface rounded-md border border-brand-navy/20 p-2 text-brand-navy"
               >
                 <X size={20} />
               </button>
@@ -81,7 +82,7 @@ export function MobileNav({ links }: MobileNavProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block text-base font-semibold text-brand-charcoal"
+                  className="motion-link block w-fit text-base font-semibold text-brand-charcoal"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

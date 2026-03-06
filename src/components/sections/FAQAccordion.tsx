@@ -26,7 +26,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
         const answerId = `faq-answer-${index}`;
 
         return (
-          <div key={item.question} className="rounded-xl border border-brand-navy/15 bg-white p-5 shadow-sm">
+          <div key={item.question} className="motion-surface rounded-xl border border-brand-navy/15 bg-white p-5 shadow-sm">
             <button
               type="button"
               className="flex w-full items-center justify-between gap-4 text-left focus-visible:ring-2 focus-visible:ring-brand-navy focus-visible:ring-offset-2"
@@ -42,16 +42,25 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               }}
             >
               <span className="text-base font-semibold text-brand-navy md:text-lg">{item.question}</span>
-              <span className="text-2xl leading-none text-brand-gold" aria-hidden>
-                {isOpen ? "-" : "+"}
+              <span
+                className={`text-2xl leading-none text-brand-gold transition-transform duration-300 ease-out ${
+                  isOpen ? "rotate-45" : "rotate-0"
+                }`}
+                aria-hidden
+              >
+                +
               </span>
             </button>
 
-            {isOpen ? (
-              <p id={answerId} className="mt-4 text-sm text-brand-slate md:text-base">
+            <div
+              className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "mt-0 grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <p id={answerId} className="overflow-hidden text-sm text-brand-slate md:text-base">
                 {item.answer}
               </p>
-            ) : null}
+            </div>
           </div>
         );
       })}

@@ -221,3 +221,32 @@
 - [ ] `/locations/norterra` mobile: map panel renders with visible map content.
 - [ ] `/locations/peoria` mobile: map panel renders with visible map content.
 - [ ] `/contact` mobile: Peoria map panel renders with visible map content.
+
+## 2026-03-06 Motion Regression Checks (Batch 1 Motion Pass)
+
+### Reduced Motion (required)
+- [ ] Enable `prefers-reduced-motion` in dev tools and verify motion effects stop on all updated pages.
+- [ ] Confirm no section/card enters with translate/fade when reduced motion is on.
+- [ ] Confirm nav, button, and FAQ interactions still work with reduced motion enabled.
+
+### Home (`/`)
+- [ ] Hero eyebrow/headline/subhead/buttons fade in smoothly (no bounce, no large movement).
+- [ ] Location cards reveal with subtle stagger as they scroll into view.
+- [ ] Service cards reveal with subtle stagger as they scroll into view.
+- [ ] Testimonial cards reveal smoothly; no layout shift during reveal.
+- [ ] FAQ preview cards and CTA panel reveal smoothly.
+
+### Interior Routes
+- [ ] `/booking`: heading, location booking cards, and walk-in panel reveal smoothly.
+- [ ] `/locations`: each location card reveals smoothly and map cards remain responsive on mobile.
+- [ ] `/locations/norterra`: content column + map/CTA column reveal smoothly.
+- [ ] `/locations/peoria`: content column + map/CTA column reveal smoothly.
+- [ ] `/services`: heading and each service category panel reveal smoothly.
+- [ ] `/contact`: location contact cards + form panel reveal smoothly.
+- [ ] `/faq`: heading, accordion block, and support panel reveal smoothly.
+
+### Navigation + Micro-Interactions
+- [ ] Desktop header links show subtle underline motion on hover/focus.
+- [ ] Footer links show subtle underline motion on hover/focus.
+- [ ] Buttons and cards lift subtly on hover without jitter.
+- [ ] Mobile menu controls animate in smoothly when opened.

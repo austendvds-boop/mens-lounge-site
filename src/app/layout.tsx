@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
@@ -13,11 +13,11 @@ const inter = Inter({
   variable: "--font-body",
 });
 
-const playfair = Playfair_Display({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  weight: ["700", "800", "900"],
   variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -47,10 +47,10 @@ export default function RootLayout({
           fetchPriority="high"
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} bg-brand-dark font-body text-brand-cream`}>
+      <body className={`${inter.variable} ${playfairDisplay.variable} font-sans`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand-dark-alt focus:px-4 focus:py-2 focus:text-brand-cream"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:border focus:border-brand-gold/40 focus:bg-brand-dark-alt focus:px-4 focus:py-2 focus:text-brand-cream"
         >
           Skip to main content
         </a>
@@ -64,4 +64,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -10,7 +10,7 @@ export function Badge({ children, className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full bg-brand-gold px-3 py-1 text-sm font-semibold text-brand-dark",
+        "inline-flex items-center rounded-full border border-brand-gold/20 bg-brand-gold/10 px-3 py-1 text-sm font-semibold text-brand-gold",
         className,
       )}
     >
@@ -18,4 +18,3 @@ export function Badge({ children, className }: BadgeProps) {
     </span>
   );
 }
-

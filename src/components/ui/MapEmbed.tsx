@@ -14,7 +14,7 @@ export function MapEmbed({ src, title, className }: MapEmbedProps) {
       loading="eager"
       allowFullScreen
       referrerPolicy="no-referrer-when-downgrade"
-      className={cn("motion-surface h-72 w-full rounded-xl border border-brand-gold/20", className)}
+      className={cn("motion-surface h-72 w-full rounded-xl border border-brand-charcoal bg-brand-dark-alt", className)}
     />
   );
 }

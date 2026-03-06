@@ -1,48 +1,51 @@
-﻿import { LEAD_CAPTURE_ENDPOINT } from "@/lib/constants";
 import { MotionReveal } from "@/components/motion/MotionReveal";
-import { Button } from "@/components/ui/Button";
 
 export function LeadCapture() {
   return (
-    <section className="bg-brand-dark py-12 md:py-16">
+    <section className="border-t-2 border-brand-gold bg-brand-dark-alt py-14 md:py-16">
       <MotionReveal className="container-shell">
-        <div className="motion-surface rounded-xl2 border border-brand-gold/25 bg-brand-dark-alt p-6 md:p-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold">First Visit Offer</p>
-            <h2 className="mt-3 font-display text-4xl text-brand-cream md:text-5xl">25% Off Your First Cut</h2>
-            <p className="mt-3 text-base text-brand-slate md:text-lg">
-              New here? Get 25% off — just tell us where to send it.
-            </p>
-          </div>
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-display text-3xl font-bold text-brand-cream md:text-4xl">
+            First Time? Get 15% Off Your First Cut
+          </h2>
+          <p className="mt-3 text-base text-brand-slate md:text-lg">
+            Drop your name and email — we&apos;ll send your discount code.
+          </p>
 
-          <form
-            action={LEAD_CAPTURE_ENDPOINT}
-            method="POST"
-            className="mx-auto mt-7 max-w-3xl"
-          >
-            <input type="hidden" name="source" value="homepage-offer" />
-            <label htmlFor="lead-contact" className="sr-only">
-              Email or phone number
-            </label>
-            <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+          <form action="#" method="POST" className="mt-8 grid gap-4 md:grid-cols-2">
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-brand-cream">Name</span>
               <input
-                id="lead-contact"
-                name="contact"
+                type="text"
+                name="name"
                 required
-                className="min-h-12 rounded-full border border-brand-gold/30 bg-brand-dark px-5 text-base text-brand-cream placeholder:text-brand-slate/70"
-                placeholder="Email or phone number"
+                className="w-full rounded-xl border border-brand-charcoal bg-brand-dark px-4 py-3 text-brand-cream placeholder:text-brand-slate focus:border-brand-gold focus:outline-none"
+                placeholder="Your name"
               />
-              <Button type="submit" className="w-full sm:w-auto">
-                Claim My 25% Off
-              </Button>
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-brand-cream">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                className="w-full rounded-xl border border-brand-charcoal bg-brand-dark px-4 py-3 text-brand-cream placeholder:text-brand-slate focus:border-brand-gold focus:outline-none"
+                placeholder="you@example.com"
+              />
+            </label>
+
+            <div className="md:col-span-2">
+              <button
+                type="submit"
+                className="motion-surface inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-gold-light"
+              >
+                Claim My Discount
+              </button>
             </div>
-            <p className="mt-3 text-center text-sm text-brand-slate">
-              We only use this to send your first-visit offer.
-            </p>
           </form>
         </div>
       </MotionReveal>
     </section>
   );
 }
-

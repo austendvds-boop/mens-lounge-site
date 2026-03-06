@@ -18,17 +18,14 @@ type ButtonProps = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-gold text-brand-dark hover:bg-brand-gold-hover hover:shadow-gold-glow focus-visible:ring-brand-gold focus-visible:ring-offset-brand-dark",
+    "bg-brand-gold text-brand-dark font-semibold hover:bg-brand-gold-light focus-visible:ring-brand-gold",
   secondary:
-    "border border-brand-gold text-brand-gold hover:bg-brand-gold/15 hover:text-brand-cream focus-visible:ring-brand-gold focus-visible:ring-offset-brand-dark",
-  ghost:
-    "rounded-none px-0 py-0 text-brand-cream hover:text-brand-gold focus-visible:ring-brand-gold focus-visible:ring-offset-brand-dark",
+    "border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark focus-visible:ring-brand-gold",
+  ghost: "text-brand-cream hover:text-brand-gold focus-visible:ring-brand-gold",
 };
 
 const baseClasses =
-  "inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.99]";
-
-const interactiveVariants = new Set<ButtonVariant>(["primary", "secondary"]);
+  "motion-surface inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark active:scale-[0.99]";
 
 export function Button({
   href,
@@ -41,12 +38,7 @@ export function Button({
   ariaLabel,
   type = "button",
 }: ButtonProps) {
-  const classes = cn(
-    baseClasses,
-    variantClasses[variant],
-    interactiveVariants.has(variant) && "motion-surface",
-    className,
-  );
+  const classes = cn(baseClasses, variantClasses[variant], className);
 
   if (!href) {
     return (
@@ -82,4 +74,3 @@ export function Button({
     </Link>
   );
 }
-

@@ -81,54 +81,19 @@
 - [x] Commit and push to `origin/main`
 - [x] Verify production deployment READY and smoke-check required routes
 
-## Batch 1 — Visual System + Homepage Conversion Revamp (V2)
+## Batch 1 — V2 Dark/Gold Design System + Homepage Rebuild
 
-- [x] Read all required references (`docs/V2-BLUEPRINT.md`, `docs/UI-VERIFICATION.md`, creative brief, `docs/ralph-context.md`)
-- [x] Replace foundation tokens with dark/gold V2 system in Tailwind + globals
-- [x] Upgrade typography to Inter + Playfair pairing
-- [x] Replace CTA variants to gold-first hierarchy and remove green CTA usage
-- [x] Implement transparent-to-solid header behavior and simplify nav (desktop + mobile)
-- [x] Add `LeadCapture` section and wire first-visit offer form endpoint fallback
-- [x] Replace `ServiceTeaser` with `ServiceCards` and update homepage order
-- [x] Update homepage conversion sections (`Hero`, `Testimonials`, `LocationCards`, `DiscountBanner`, `CTABanner`)
-- [x] Reduce featured services to 3 and update copy tone
-- [x] Run verification (`npm run build`, homepage desktop+mobile screenshots, scroll-header behavior check)
+- [x] Run mandatory clean reset and reinstall dependencies
+- [x] Verify foundation build passes before changes
+- [x] Replace Tailwind color palette with V2 dark/gold tokens and add `font-display`
+- [x] Load Playfair Display in root layout with CSS variable wiring
+- [x] Rewrite global CSS for dark background/cream text/gold focus while preserving motion utilities
+- [x] Rewrite shared UI primitives (`Button`, `Card`, `Badge`, `SectionHeading`)
+- [x] Restyle shared layout components (`Header`, `Footer`, `MobileNav`)
+- [x] Rewrite homepage order and remove inline FAQ block
+- [x] Rebuild `Hero` to V2 copy/CTA style with motion stagger
+- [x] Add `LeadCapture` section with static placeholder form
+- [x] Restyle `ServiceTeaser`, `Testimonials`, `LocationCards`, `DiscountBanner`, `CTABanner`
+- [x] Preserve `MotionReveal` component unchanged
+- [x] Run verification (`npm run build`, `npx tsc --noEmit`)
 - [x] Commit and push to `origin/main`
-
-## Batch 2 — Interior Pages Premium Redesign (V2 Alignment Retry)
-
-- [x] Restyle `/services` to full dark/gold premium system (cards, tables, prices, CTA copy)
-- [x] Restyle `/booking` cards and walk-in panel to dark/gold surfaces
-- [x] Restyle `/locations`, `/locations/norterra`, `/locations/peoria` to dark/gold cards, links, and hours tables
-- [x] Restyle `/contact` cards and form controls for dark mode readability and contrast
-- [x] Restyle `/faq` and `FAQAccordion` open-state/focus styling for dark/gold treatment
-- [x] Run verification (`npm run build`)
-- [x] Update docs (`CODER-CONTEXT`, `implementation-plan`, `UI-VERIFICATION`)
-- [x] Commit and push to `origin/main`
-## Batch 2 — V2 Interior Pages Premium Redesign
-
-- [x] Read required refs (`docs/V2-BLUEPRINT.md`, `docs/UI-VERIFICATION.md`)
-- [x] Apply V2 dark/gold treatment to `/services`
-- [x] Apply V2 dark/gold treatment to `/booking`
-- [x] Apply V2 dark/gold treatment to `/locations`
-- [x] Apply V2 dark/gold treatment to `/locations/norterra`
-- [x] Apply V2 dark/gold treatment to `/locations/peoria`
-- [x] Apply V2 dark/gold treatment to `/contact`
-- [x] Apply V2 dark/gold treatment to `/faq`
-- [x] Update `src/components/sections/FAQAccordion.tsx` styling to V2
-- [x] Run verification (`npm run build`)
-- [x] Update docs (`docs/CODER-CONTEXT.md`, `docs/ralph-context.md`, `docs/implementation-plan.md`)
-- [x] Commit and push to `origin/main`
-
-## Batch 3 — Polish, Motion Tuning, Conversion Optimization + Final Deploy Verification
-
-- [x] Read required refs (docs/V2-BLUEPRINT.md, docs/UI-VERIFICATION.md)
-- [x] Tune motion behavior for mobile and reveal timing (globals.css, MotionReveal.tsx)
-- [x] Complete conversion copy consistency pass (Book Your Cut wording sweep)
-- [x] Align straggler UI surfaces to V2 dark/gold tokens (MapEmbed, 
-ot-found)
-- [x] Run build verification (
-pm run build)
-- [ ] Capture full screenshot set (desktop + mobile) for key routes
-- [ ] Commit and push to origin/main
-- [ ] Verify production deploy READY and smoke-check impacted routes

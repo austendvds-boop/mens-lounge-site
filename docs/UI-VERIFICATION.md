@@ -182,7 +182,45 @@ Routes/components touched in polish pass:
 ot-found route (V2 dark/gold consistency + CTA copy)
 - Shared motion system (globals.css, MotionReveal) affecting reveal timing on all major routes
 
-Verification focus for this pass:
-- reduced-motion-safe reveal behavior on mobile
-- no remaining Book Now copy in user-facing CTAs/metadata
-- map embeds visually consistent with V2 palette
+### Interior Routes
+- [ ] `/booking`: heading, location booking cards, and walk-in panel reveal smoothly.
+- [ ] `/locations`: each location card reveals smoothly and map cards remain responsive on mobile.
+- [ ] `/locations/norterra`: content column + map/CTA column reveal smoothly.
+- [ ] `/locations/peoria`: content column + map/CTA column reveal smoothly.
+- [ ] `/services`: heading and each service category panel reveal smoothly.
+- [ ] `/contact`: location contact cards + form panel reveal smoothly.
+- [ ] `/faq`: heading, accordion block, and support panel reveal smoothly.
+
+### Navigation + Micro-Interactions
+- [ ] Desktop header links show subtle underline motion on hover/focus.
+- [ ] Footer links show subtle underline motion on hover/focus.
+- [ ] Buttons and cards lift subtly on hover without jitter.
+- [ ] Mobile menu controls animate in smoothly when opened.
+
+## 2026-03-06 — V2 Dark/Gold Homepage Verification (Batch 1)
+
+### Global theme checks (all routes)
+- [ ] Background base is near-black (`#0F0F0F`) with cream body text (`#F5F0E8`).
+- [ ] Heading typography uses Playfair Display for `h1`, `h2`, and `h3`.
+- [ ] Primary buttons are gold fill; secondary buttons are gold outline; no green CTA buttons remain.
+- [ ] Header is dark, sticky, and nav links shift from cream to gold on hover/focus.
+- [ ] Footer uses dark-alt background with cream text, slate muted text, and gold accent links.
+- [ ] Mobile menu overlay is dark and includes gold-accented Book Now CTA.
+
+### Home (`/`) checks
+- [ ] Section order is exactly: Hero ? LeadCapture ? Services ? Testimonials ? Locations ? Discount banner ? CTA banner.
+- [ ] Hero eyebrow reads `MEN'S LOUNGE BARBERSHOP` in gold uppercase.
+- [ ] Hero headline reads `Phoenix's Premier Men's Grooming Experience` in Playfair display style.
+- [ ] Hero shows two CTAs: `Book Your Cut` (gold fill) and `View Services` (gold outline).
+- [ ] LeadCapture section exists under hero with top gold border and static name/email form.
+- [ ] Services section headline reads `Look Sharp Every Time` and shows exactly 3 featured cards.
+- [ ] Testimonials section headline reads `Trusted Across the Valley` with gold stars.
+- [ ] Locations section headline reads `Two Shops, Same Standard` with two location cards.
+- [ ] Discount banner copy reads `New clients: 15% off your first visit` with `Book Now` CTA.
+- [ ] Bottom CTA banner heading reads `Ready to Look Your Best?` with `Book Your Cut` button.
+- [ ] Homepage has no inline FAQ block.
+
+### Motion checks
+- [ ] Hero text/CTA elements fade up with stagger.
+- [ ] LeadCapture and each homepage section reveal with subtle scroll motion.
+- [ ] Hover lift/underline micro-interactions feel subtle and consistent on cards/links/buttons.

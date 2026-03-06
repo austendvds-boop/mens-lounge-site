@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { locations } from "@/data/locations";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -8,20 +8,20 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function LocationCards() {
   return (
-    <section id="locations" className="bg-brand-dark py-16 md:py-24">
+    <section id="locations" className="bg-brand-dark py-14 md:py-20">
       <div className="container-shell space-y-10">
         <MotionReveal>
           <SectionHeading
-            eyebrow="Two Convenient Locations"
-            title="Pick Your Closest Chair"
-            description="Both shops are on Happy Valley Road, with walk-ins welcome every day we're open."
+            eyebrow="LOCATIONS"
+            title="Two Shops, Same Standard"
+            description="Visit either location for consistent service, skilled barbers, and a premium experience."
             centered
           />
         </MotionReveal>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {locations.map((location, index) => (
-            <MotionReveal key={location.slug} delayMs={index * 100}>
+            <MotionReveal key={location.slug} delayMs={index * 75}>
               <Card className="overflow-hidden p-0">
                 <div className="relative aspect-[16/9]">
                   {/* PLACEHOLDER: Replace with owner-supplied location photo. */}
@@ -38,12 +38,12 @@ export function LocationCards() {
 
                 <div className="space-y-4 p-6">
                   <div>
-                    <h3 className="font-display text-3xl text-brand-cream">{location.title}</h3>
+                    <h3 className="text-2xl font-bold text-brand-gold">{location.title}</h3>
                     <p className="mt-2 text-sm text-brand-slate">{location.addressLine1}</p>
                     <p className="text-sm text-brand-slate">{location.addressLine2}</p>
                     <a
                       href={location.phoneHref}
-                      className="motion-link mt-1 block w-fit text-sm font-semibold text-brand-gold"
+                      className="motion-link mt-2 inline-block text-sm font-semibold text-brand-cream hover:text-brand-gold"
                     >
                       {location.phoneDisplay}
                     </a>
@@ -51,9 +51,9 @@ export function LocationCards() {
 
                   <Badge>{location.hoursBadge}</Badge>
 
-                  <div className="rounded-lg border border-brand-gold/20 bg-brand-dark p-4 text-sm">
+                  <div className="rounded-lg border border-brand-charcoal bg-brand-dark p-4 text-sm">
                     {location.hours.map((hour) => (
-                      <div key={hour.day} className="flex justify-between gap-4 border-b border-brand-gold/10 py-2 last:border-b-0">
+                      <div key={hour.day} className="flex justify-between gap-4 py-1">
                         <span className="font-semibold text-brand-cream">{hour.day}</span>
                         <span className="text-right text-brand-slate">{hour.hours}</span>
                       </div>
@@ -67,7 +67,7 @@ export function LocationCards() {
                       rel="noopener noreferrer"
                       className="flex-1"
                     >
-                      {location.slug === "norterra" ? "Book at Norterra" : "Book at Peoria"}
+                      Book
                     </Button>
                     <Button
                       href={location.directionsUrl}
@@ -76,7 +76,7 @@ export function LocationCards() {
                       rel="noopener noreferrer"
                       className="flex-1"
                     >
-                      Get Directions
+                      Directions
                     </Button>
                   </div>
                 </div>

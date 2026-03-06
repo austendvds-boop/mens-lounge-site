@@ -251,82 +251,21 @@
 - `npm run build` → pass (Next build + next-sitemap).
 - Motion implementation stays CSS-first + lightweight observer (no heavy animation library added).
 
-## Batch 1 — Visual System + Homepage Conversion Revamp (V2) — 2026-03-06
+## Batch 1 V2 Dark/Gold Design Reset + Homepage Rebuild — 2026-03-06
 
 ### Completed scope
-- Migrated core design foundation to V2 dark/gold tokens across:
-  - `tailwind.config.ts`
-  - `src/app/globals.css`
-  - `src/lib/constants.ts`
-- Added body/display font pairing (Inter + Playfair Display) and dark base shell in `src/app/layout.tsx`.
-- Reworked shared UI primitives to match V2 system:
-  - `src/components/ui/Button.tsx`
-  - `src/components/ui/Card.tsx`
-  - `src/components/ui/Badge.tsx`
-  - `src/components/ui/SectionHeading.tsx`
-- Updated global layout/navigation for conversion:
-  - transparent-to-solid header on scroll (`src/components/layout/Header.tsx`)
-  - simplified nav links (Services, Locations, Contact, FAQ)
-  - dark mobile drawer + gold CTA (`src/components/layout/MobileNav.tsx`)
-  - dark footer token alignment + Instagram icon (`src/components/layout/Footer.tsx`)
-- Implemented homepage conversion restructure:
-  - added `src/components/sections/LeadCapture.tsx`
-  - added `src/components/sections/ServiceCards.tsx`
-  - removed `src/components/sections/ServiceTeaser.tsx`
-  - updated `Hero`, `Testimonials`, `LocationCards`, `DiscountBanner`, `CTABanner`
-  - updated `src/app/page.tsx` order to:
-    `Hero → LeadCapture → ServiceCards → Testimonials → LocationCards → DiscountBanner → CTABanner`
-- Updated `src/data/services.ts` featured list to 3 V2 cards with premium plain-English copy.
-- Added lead form endpoint env fallback in `docs/ENV-VARS.md`.
+- Replaced theme tokens with V2 dark/gold palette in Tailwind.
+- Added Playfair Display as heading font via `next/font/google` and Tailwind `font-display` utility.
+- Reworked global styling to dark base + cream foreground + gold focus while preserving motion utilities and reduced-motion behavior.
+- Restyled shared components/layout for dark mode:
+  - `Button`, `Card`, `Badge`, `SectionHeading`, `MapEmbed`
+  - `Header`, `Footer`, `MobileNav`
+- Rebuilt homepage order and content flow:
+  - `Hero` → `LeadCapture` → `ServiceTeaser` → `Testimonials` → `LocationCards` → `DiscountBanner` → `CTABanner`
+- Added new `LeadCapture` section with static form placeholder (`action="#"`, `method="POST"`).
+- Removed home inline FAQ preview section (FAQ remains on dedicated route).
 
 ### Verification
-- `npm run build` → pass.
-- Homepage screenshot set completed:
-  - Desktop 1440px full-page: `C:\Users\austen\.openclaw\media\browser\00464816-69d7-4223-9c0b-6232a2783a32.jpg`
-  - Mobile 375px full-page: `C:\Users\austen\.openclaw\media\browser\de33b854-3826-4497-9c95-c2422b5d2980.jpg`
-- Header transition verified in-browser (transparent at top → dark/blur solid on scroll).
-## Batch 2 — V2 Interior Pages Premium Redesign (2026-03-06)
-
-### Completed scope
-- Upgraded all required interior routes to the V2 premium dark/gold system:
-  - `/services`
-  - `/booking`
-  - `/locations`
-  - `/locations/norterra`
-  - `/locations/peoria`
-  - `/contact`
-  - `/faq`
-- Applied dark surfaces + gold border treatment on route-level cards/panels.
-- Updated services pricing tables with dark alternating row backgrounds and gold prices.
-- Updated booking + location callout cards for V2 contrast and kept the Peoria shared-booking fallback notice.
-- Updated contact form field styles for dark mode readability (cream labels/text + gold border/focus states).
-- Updated FAQ route support card and `FAQAccordion` component to match V2 dark/gold behavior, including stronger open-state emphasis.
-
-### Files touched
-- `src/app/services/page.tsx`
-- `src/app/booking/page.tsx`
-- `src/app/locations/page.tsx`
-- `src/app/locations/norterra/page.tsx`
-- `src/app/locations/peoria/page.tsx`
-- `src/app/contact/page.tsx`
-- `src/app/faq/page.tsx`
-- `src/components/sections/FAQAccordion.tsx`
-
-### Verification
-- `npm run build` → pass.
-
-## Batch 3 — Motion Tuning + Conversion Consistency Polish (2026-03-06)
-
-### Completed scope in this pass
-- Added mobile-specific motion tuning in src/app/globals.css so reveal travel distance drops from 30px to 24px on <=768px screens.
-- Tightened reveal trigger behavior in src/components/motion/MotionReveal.tsx by updating observer ootMargin to  px 0px -5% 0px.
-- Completed conversion CTA wording cleanup:
-  - booking metadata title now uses Book Your Cut in src/app/booking/page.tsx
-  - 404 page primary CTA now uses Book Your Cut in src/app/not-found.tsx
-- Updated map surface styling to V2 gold borders in src/components/ui/MapEmbed.tsx.
-- Restyled 404 route to V2 dark/gold treatment for visual consistency and contrast.
-
-### Verification
-- 
-pm run build → pass (Next build + 
-ext-sitemap).
+- `npm run build` → pass
+- `npx tsc --noEmit` → pass
+- Updated homepage/shared files no longer use old green/navy theme classes.

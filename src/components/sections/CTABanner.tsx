@@ -3,23 +3,19 @@ import { Button } from "@/components/ui/Button";
 
 export function CTABanner() {
   return (
-    <section className="bg-brand-dark py-14">
+    <section className="bg-brand-dark py-16">
       <MotionReveal className="container-shell">
-        <div className="motion-surface rounded-xl2 border border-brand-gold/35 bg-brand-dark-alt p-8 text-center md:p-12">
-          <h2 className="font-display text-4xl text-brand-cream md:text-5xl">Your Chair Is Waiting.</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-brand-slate md:text-lg">
-            Book in seconds, then show up and leave sharper than you arrived.
+        <div className="motion-surface rounded-2xl border border-brand-gold/40 bg-gradient-to-r from-brand-dark-alt to-brand-dark px-8 py-12 text-center md:px-12">
+          <h2 className="font-display text-3xl font-bold text-brand-cream md:text-5xl">
+            Ready to Look Your Best?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-brand-slate md:text-lg">
+            Lock in your appointment now and walk out with a fresh, confident look.
           </p>
 
-          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/booking" className="min-w-44">
+          <div className="mt-8 flex justify-center">
+            <Button href="/booking" className="!px-10 !py-4 text-base">
               Book Your Cut
-            </Button>
-            <Button href="tel:+16235563193" variant="secondary" className="min-w-44">
-              Call Norterra
-            </Button>
-            <Button href="tel:+16234409412" variant="secondary" className="min-w-44">
-              Call Peoria
             </Button>
           </div>
         </div>
@@ -27,4 +23,3 @@ export function CTABanner() {
     </section>
   );
 }
-

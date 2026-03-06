@@ -314,134 +314,42 @@
 ### Verification
 - `npm run build` passes clean (Next build + `next-sitemap`).
 
-## 2026-03-06 — Batch 1 V2 Visual System + Homepage Conversion Revamp
+## 2026-03-06 — Batch 1 V2 Dark/Gold Design Reset + Homepage Rebuild
 
 ### What changed
-- Replaced the global design foundation with V2 dark/gold tokens in `tailwind.config.ts` and `src/app/globals.css` (including updated motion timings and reduced-motion-safe behavior).
-- Upgraded typography system in `src/app/layout.tsx` to Inter (`--font-body`) + Playfair Display (`--font-display`) and applied dark base shell classes.
-- Rebuilt CTA hierarchy in `src/components/ui/Button.tsx` to gold primary, gold-outline secondary, and cream ghost styles (removing green CTA usage from shared button primitives).
-- Updated shared UI primitives for V2 contrast and premium styling:
-  - `src/components/ui/Card.tsx`
-  - `src/components/ui/Badge.tsx`
-  - `src/components/ui/SectionHeading.tsx`
-- Updated shared constants in `src/lib/constants.ts`:
-  - migrated `BRAND_COLORS` to V2 values
-  - added `LEAD_CAPTURE_ENDPOINT` with env fallback to contact endpoint
-- Refreshed layout/navigation for homepage conversion flow:
-  - `src/components/layout/Header.tsx` (transparent → solid on scroll, simplified nav)
-  - `src/components/layout/MobileNav.tsx` (dark drawer + gold CTA)
-  - `src/components/layout/Footer.tsx` (dark token alignment + Instagram icon)
-- Reworked homepage sections for Batch 1 conversion order and copy:
-  - `src/components/sections/Hero.tsx`
-  - `src/components/sections/LeadCapture.tsx` (new)
-  - `src/components/sections/ServiceCards.tsx` (new, replaces `ServiceTeaser`)
-  - `src/components/sections/Testimonials.tsx`
-  - `src/components/sections/LocationCards.tsx`
-  - `src/components/sections/DiscountBanner.tsx`
-  - `src/components/sections/CTABanner.tsx`
-  - `src/app/page.tsx` (new order: Hero → LeadCapture → ServiceCards → Testimonials → LocationCards → DiscountBanner → CTABanner)
-- Updated homepage featured data in `src/data/services.ts` to 3 featured cards with V2 copy.
-- Deleted deprecated `src/components/sections/ServiceTeaser.tsx`.
-- Updated docs:
-  - `docs/ENV-VARS.md` (`NEXT_PUBLIC_LEAD_CAPTURE_ENDPOINT`)
-  - `docs/UI-VERIFICATION.md` timestamp refresh
-
-### Verification completed
-- `npm run build` passes (Next build + `next-sitemap`).
-- Homepage screenshot verification captured:
-  - desktop full-page (`1440px`): `C:\Users\austen\.openclaw\media\browser\00464816-69d7-4223-9c0b-6232a2783a32.jpg`
-  - mobile full-page (`375px`): `C:\Users\austen\.openclaw\media\browser\de33b854-3826-4497-9c95-c2422b5d2980.jpg`
-- Header behavior validated by runtime check:
-  - top: `rgba(0, 0, 0, 0)`
-  - scrolled: `rgba(15, 15, 15, 0.93)`
-- Text/copy sanity checks confirmed:
-  - testimonial stars render as `★★★★★`
-  - service micro-CTA renders as `Book This →`
-
-## 2026-03-06 — Batch 2 Interior V2 Premium Alignment (Subagent)
-
-### What changed
-- Reworked all required interior routes to fully use the V2 dark/gold system:
-  - `/services`
-  - `/booking`
-  - `/locations`
-  - `/locations/norterra`
-  - `/locations/peoria`
-  - `/contact`
-  - `/faq`
-- Updated service tables/cards on `/services` to dark surfaces with gold borders, alternating dark rows, and gold prices.
-- Switched interior route primary backgrounds from light/cream to `bg-brand-dark` and card surfaces to `bg-brand-dark-alt`.
-- Updated interior link accents/phone links to gold and aligned CTA copy on `/services` to `Book Your Cut`.
-- Updated `/contact` form controls to dark input/select/textarea styling with gold borders, cream text, and preserved label accessibility.
-- Updated FAQ experience (`/faq` + `src/components/sections/FAQAccordion.tsx`) to dark accordion cards with gold open-state borders and gold focus rings.
-- Added/updated location card overlays and hours/table styling on `/locations` and location detail pages for consistent premium contrast.
+- Replaced the Tailwind design token palette with the V2 dark/gold system (`brand-dark`, `brand-dark-alt`, `brand-gold`, `brand-gold-light`, `brand-cream`, `brand-charcoal`, `brand-slate`).
+- Added display typography support with Playfair Display in `layout.tsx` and wired `font-display` / `font-sans` CSS variables through Tailwind.
+- Reworked global styles in `src/app/globals.css` for dark surfaces, cream foreground text, gold focus states, and preserved motion utility behavior.
+- Rebuilt shared layout + UI primitives for dark mode:
+  - `Header`, `Footer`, `MobileNav`
+  - `Button`, `Card`, `Badge`, `SectionHeading`, `MapEmbed`
+- Rebuilt home composition order in `src/app/page.tsx`:
+  1) Hero, 2) LeadCapture, 3) ServiceTeaser, 4) Testimonials, 5) LocationCards, 6) DiscountBanner, 7) CTABanner.
+- Added new `LeadCapture` section with static POST form placeholder (`action="#"`, `method="POST"`).
+- Restyled all homepage sections to the premium dark/gold visual system while preserving `MotionReveal` usage and stagger timing.
 
 ### Files touched
-- `src/app/services/page.tsx`
-- `src/app/booking/page.tsx`
-- `src/app/locations/page.tsx`
-- `src/app/locations/norterra/page.tsx`
-- `src/app/locations/peoria/page.tsx`
-- `src/app/contact/page.tsx`
-- `src/app/faq/page.tsx`
-- `src/components/sections/FAQAccordion.tsx`
-- `docs/CODER-CONTEXT.md`
-- `docs/implementation-plan.md`
-- `docs/UI-VERIFICATION.md`
+- `tailwind.config.ts`
+- `src/app/layout.tsx`
+- `src/app/globals.css`
+- `src/app/page.tsx`
+- `src/components/layout/Header.tsx`
+- `src/components/layout/Footer.tsx`
+- `src/components/layout/MobileNav.tsx`
+- `src/components/ui/Button.tsx`
+- `src/components/ui/Card.tsx`
+- `src/components/ui/Badge.tsx`
+- `src/components/ui/SectionHeading.tsx`
+- `src/components/ui/MapEmbed.tsx`
+- `src/components/sections/Hero.tsx`
+- `src/components/sections/LeadCapture.tsx` (new)
+- `src/components/sections/ServiceTeaser.tsx`
+- `src/components/sections/Testimonials.tsx`
+- `src/components/sections/LocationCards.tsx`
+- `src/components/sections/DiscountBanner.tsx`
+- `src/components/sections/CTABanner.tsx`
 
 ### Verification
-- `npm run build` passes clean (Next build + `next-sitemap`).
-## 2026-03-06 — Batch 2 V2 Interior Pages Premium Redesign
-
-### What changed
-- Applied the V2 dark/gold treatment across all required interior routes:
-  - `/services`
-  - `/booking`
-  - `/locations`
-  - `/locations/norterra`
-  - `/locations/peoria`
-  - `/contact`
-  - `/faq`
-- Updated services pricing tables to dark alternating rows with gold price emphasis and unified "Book Your Cut" CTAs.
-- Updated booking cards and walk-in panel to dark surfaces with gold borders; retained Peoria fallback notice styling with gold-tinted callout.
-- Updated location detail pages (Norterra/Peoria) to V2 cards, headings, links, hours rows, and booking panels.
-- Updated contact route cards and form controls to dark inputs with gold border/focus treatment and cream labels/text.
-- Updated FAQ page support card and refreshed `FAQAccordion` styling for dark surfaces and stronger open-state gold border behavior.
-
-### Files touched
-- `src/app/services/page.tsx`
-- `src/app/booking/page.tsx`
-- `src/app/locations/page.tsx`
-- `src/app/locations/norterra/page.tsx`
-- `src/app/locations/peoria/page.tsx`
-- `src/app/contact/page.tsx`
-- `src/app/faq/page.tsx`
-- `src/components/sections/FAQAccordion.tsx`
-
-### Verification
-- `npm run build` passes clean (Next build + `next-sitemap`).
-
-## 2026-03-06 — Batch 3 Motion + Conversion Polish (Pre-deploy)
-
-### What changed
-- Tuned reveal motion behavior for better mobile pacing:
-  - Added a mobile override in src/app/globals.css to reduce --motion-distance-md from 30px to 24px at <=768px.
-  - Tightened reveal trigger timing in src/components/motion/MotionReveal.tsx by changing observer ootMargin from -8% to -5%.
-- Completed conversion copy consistency cleanup:
-  - Updated booking page metadata title to Book Your Cut · Men's Lounge Barbershop in src/app/booking/page.tsx.
-  - Updated 404 recovery CTA copy from Book Now to Book Your Cut in src/app/not-found.tsx.
-- Completed visual consistency pass on map surfaces:
-  - Updated map iframe border styling from navy to V2 gold tint in src/components/ui/MapEmbed.tsx.
-- Refreshed src/app/not-found.tsx to match V2 dark/gold visual system and accessible contrast (dark surface, gold accents, cream text).
-
-### Files touched
-- src/app/globals.css
-- src/components/motion/MotionReveal.tsx
-- src/app/booking/page.tsx
-- src/components/ui/MapEmbed.tsx
-- src/app/not-found.tsx
-
-### Verification
-- 
-pm run build passes clean (Next build + 
-ext-sitemap).
+- `npm run build` passes.
+- `npx tsc --noEmit` passes.
+- Confirmed no old green/navy utility usage remains in updated design-system/homepage files.

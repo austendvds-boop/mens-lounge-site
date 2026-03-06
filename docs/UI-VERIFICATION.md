@@ -1,7 +1,9 @@
 # UI Verification — Men's Lounge V2 (Dark Mode Premium)
 
-**Last Updated:** March 6, 2026
+**Last Updated:** March 6, 2026 (Batch 2 interior premium alignment pass)
 **Design System:** Dark (#0F0F0F) + Gold (#C9A962) + Cream (#F5F5F0)
+
+**Batch 2 Routes Updated:** `/services`, `/booking`, `/locations`, `/locations/norterra`, `/locations/peoria`, `/contact`, `/faq`
 
 ---
 

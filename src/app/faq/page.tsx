@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MotionReveal } from "@/components/motion/MotionReveal";
 import { CTABanner } from "@/components/sections/CTABanner";
@@ -31,7 +31,7 @@ export default function FAQPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-brand-cream py-14 md:py-20">
+      <section className="bg-brand-dark py-14 md:py-20">
         <div className="container-shell">
           <MotionReveal>
             <SectionHeading
@@ -47,13 +47,20 @@ export default function FAQPage() {
           </MotionReveal>
 
           <MotionReveal delayMs={140} className="mx-auto mt-10 max-w-3xl">
-            <div className="motion-surface rounded-xl2 border border-brand-navy/15 bg-white p-6 text-center">
-              <h2 className="text-2xl font-bold">Still have questions?</h2>
+            <div className="motion-surface rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6 text-center">
+              <h2 className="text-2xl font-bold text-brand-cream">Still have questions?</h2>
               <p className="mt-3 text-brand-slate">Give us a call and we&apos;ll help you out.</p>
-              <p className="mt-3 text-sm text-brand-charcoal">
-                Norterra: <a href="tel:+16235563193" className="motion-link inline-block font-semibold text-brand-navy">(623) 556-3193</a> · Peoria: <a href="tel:+16234409412" className="motion-link inline-block font-semibold text-brand-navy">(623) 440-9412</a>
+              <p className="mt-3 text-sm text-brand-cream">
+                Norterra:{" "}
+                <a href="tel:+16235563193" className="motion-link inline-block font-semibold text-brand-gold">
+                  (623) 556-3193
+                </a>{" "}
+                · Peoria:{" "}
+                <a href="tel:+16234409412" className="motion-link inline-block font-semibold text-brand-gold">
+                  (623) 440-9412
+                </a>
               </p>
-              <Link href="/contact" className="motion-link mt-4 inline-block text-sm font-semibold text-brand-navy underline-offset-4">
+              <Link href="/contact" className="motion-link mt-4 inline-block text-sm font-semibold text-brand-gold underline-offset-4">
                 Go to contact page →
               </Link>
             </div>
@@ -65,4 +72,3 @@ export default function FAQPage() {
     </>
   );
 }
-

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { TrackedButton } from "@/components/analytics/TrackedButton";
 import { MotionReveal } from "@/components/motion/MotionReveal";
 import { CTABanner } from "@/components/sections/CTABanner";
@@ -22,7 +22,7 @@ export default function NorterraLocationPage() {
     <>
       <LocalBusinessSchema locationSlug="norterra" />
 
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-brand-dark py-14 md:py-20">
         <div className="container-shell grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <MotionReveal>
             <div>
@@ -32,16 +32,16 @@ export default function NorterraLocationPage() {
                 description="Classic cuts, old-school shaves, and walk-ins welcome all week."
               />
 
-              <div className="motion-surface mt-8 space-y-6 rounded-xl2 border border-brand-navy/15 bg-brand-cream/60 p-6">
+              <div className="motion-surface mt-8 space-y-6 rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6">
                 <div>
-                  <h2 className="text-xl font-bold">Address</h2>
+                  <h2 className="text-xl font-bold text-brand-cream">Address</h2>
                   <p className="mt-2 text-brand-slate">2501 W Happy Valley Rd, Suite #32-1070</p>
                   <p className="text-brand-slate">Phoenix, AZ 85085</p>
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold">Contact</h2>
-                  <a href={norterra.phoneHref} className="motion-link mt-2 block w-fit font-semibold text-brand-navy">
+                  <h2 className="text-xl font-bold text-brand-cream">Contact</h2>
+                  <a href={norterra.phoneHref} className="motion-link mt-2 block w-fit font-semibold text-brand-gold">
                     {norterra.phoneDisplay}
                   </a>
                   <a href={`mailto:${norterra.email}`} className="motion-link inline-block text-brand-slate">
@@ -50,11 +50,11 @@ export default function NorterraLocationPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold">Hours</h2>
+                  <h2 className="text-xl font-bold text-brand-cream">Hours</h2>
                   <div className="mt-2 space-y-2 text-sm">
                     {norterra.hours.map((hour) => (
-                      <div key={hour.day} className="flex justify-between gap-4 border-b border-brand-navy/10 pb-1 last:border-b-0">
-                        <span className="font-semibold text-brand-charcoal">{hour.day}</span>
+                      <div key={hour.day} className="flex justify-between gap-4 border-b border-brand-gold/10 pb-1 last:border-b-0">
+                        <span className="font-semibold text-brand-cream">{hour.day}</span>
                         <span className="text-right text-brand-slate">{hour.hours}</span>
                       </div>
                     ))}
@@ -62,7 +62,7 @@ export default function NorterraLocationPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold">Amenities</h2>
+                  <h2 className="text-xl font-bold text-brand-cream">Amenities</h2>
                   <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-brand-slate">
                     <li>Walk-ins welcome all business hours</li>
                     <li>Wheelchair accessible</li>
@@ -72,7 +72,7 @@ export default function NorterraLocationPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold">Popular Services at Norterra</h2>
+                  <h2 className="text-xl font-bold text-brand-cream">Popular Services at Norterra</h2>
                   <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-brand-slate">
                     <li>Men&apos;s Haircut - $23</li>
                     <li>Old Fashion Hot Towel Shave - $30</li>
@@ -88,8 +88,8 @@ export default function NorterraLocationPage() {
             <div className="space-y-6">
               <MapEmbed src={MAP_EMBED_URLS.norterra} title="Map for Men's Lounge Norterra" className="h-80" />
 
-              <div className="motion-surface rounded-xl2 border border-brand-navy/15 bg-brand-cream/50 p-6">
-                <h3 className="text-2xl font-bold">Book at Norterra</h3>
+              <div className="motion-surface rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6">
+                <h3 className="text-2xl font-bold text-brand-cream">Book at Norterra</h3>
                 <p className="mt-2 text-sm text-brand-slate">
                   Pick your barber, choose your time, and lock in your appointment in under a minute.
                 </p>
@@ -126,4 +126,3 @@ export default function NorterraLocationPage() {
     </>
   );
 }
-

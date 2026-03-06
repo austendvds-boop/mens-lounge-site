@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { MotionReveal } from "@/components/motion/MotionReveal";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -16,7 +16,7 @@ export const metadata: Metadata = buildPageMetadata(
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-brand-dark py-14 md:py-20">
         <div className="container-shell">
           <MotionReveal>
             <SectionHeading
@@ -30,11 +30,11 @@ export default function ContactPage() {
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {locations.map((location, index) => (
               <MotionReveal key={location.slug} delayMs={index * 70}>
-                <article className="motion-surface space-y-4 rounded-xl2 border border-brand-navy/15 bg-brand-cream/40 p-6">
-                  <h2 className="text-2xl font-bold">{location.title}</h2>
+                <article className="motion-surface space-y-4 rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6">
+                  <h2 className="text-2xl font-bold text-brand-cream">{location.title}</h2>
                   <p className="text-sm text-brand-slate">{location.addressLine1}</p>
                   <p className="text-sm text-brand-slate">{location.addressLine2}</p>
-                  <a href={location.phoneHref} className="motion-link block w-fit font-semibold text-brand-navy">
+                  <a href={location.phoneHref} className="motion-link block w-fit font-semibold text-brand-gold">
                     {location.phoneDisplay}
                   </a>
                   <a href={`mailto:${location.email}`} className="motion-link inline-block text-sm text-brand-slate">
@@ -48,22 +48,22 @@ export default function ContactPage() {
           </div>
 
           <MotionReveal delayMs={140}>
-            <div className="motion-surface mt-12 rounded-xl2 border border-brand-navy/15 bg-brand-cream/40 p-6 md:p-8">
-              <h2 className="text-2xl font-bold">Send Us a Message</h2>
+            <div className="motion-surface mt-12 rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6 md:p-8">
+              <h2 className="text-2xl font-bold text-brand-cream">Send Us a Message</h2>
               <p className="mt-2 text-sm text-brand-slate">We usually respond within one business day.</p>
 
               <form action={CONTACT_FORM_ENDPOINT} method="POST" className="mt-6 grid gap-4">
-                <label className="text-sm font-semibold text-brand-charcoal" htmlFor="name">
+                <label className="text-sm font-semibold text-brand-cream" htmlFor="name">
                   Name
                 </label>
                 <input
                   id="name"
                   name="name"
                   required
-                  className="rounded-lg border border-brand-navy/20 bg-white px-4 py-3 text-sm"
+                  className="rounded-lg border border-brand-gold/20 bg-brand-dark-alt px-4 py-3 text-sm text-brand-cream placeholder:text-brand-slate/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 />
 
-                <label className="text-sm font-semibold text-brand-charcoal" htmlFor="email">
+                <label className="text-sm font-semibold text-brand-cream" htmlFor="email">
                   Email
                 </label>
                 <input
@@ -71,26 +71,26 @@ export default function ContactPage() {
                   type="email"
                   name="email"
                   required
-                  className="rounded-lg border border-brand-navy/20 bg-white px-4 py-3 text-sm"
+                  className="rounded-lg border border-brand-gold/20 bg-brand-dark-alt px-4 py-3 text-sm text-brand-cream placeholder:text-brand-slate/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 />
 
-                <label className="text-sm font-semibold text-brand-charcoal" htmlFor="phone">
+                <label className="text-sm font-semibold text-brand-cream" htmlFor="phone">
                   Phone (optional)
                 </label>
                 <input
                   id="phone"
                   type="tel"
                   name="phone"
-                  className="rounded-lg border border-brand-navy/20 bg-white px-4 py-3 text-sm"
+                  className="rounded-lg border border-brand-gold/20 bg-brand-dark-alt px-4 py-3 text-sm text-brand-cream placeholder:text-brand-slate/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 />
 
-                <label className="text-sm font-semibold text-brand-charcoal" htmlFor="location">
+                <label className="text-sm font-semibold text-brand-cream" htmlFor="location">
                   Location
                 </label>
                 <select
                   id="location"
                   name="location"
-                  className="rounded-lg border border-brand-navy/20 bg-white px-4 py-3 text-sm"
+                  className="rounded-lg border border-brand-gold/20 bg-brand-dark-alt px-4 py-3 text-sm text-brand-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                   defaultValue="General"
                 >
                   <option>Norterra</option>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   <option>General</option>
                 </select>
 
-                <label className="text-sm font-semibold text-brand-charcoal" htmlFor="message">
+                <label className="text-sm font-semibold text-brand-cream" htmlFor="message">
                   Message
                 </label>
                 <textarea
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   name="message"
                   rows={5}
                   required
-                  className="rounded-lg border border-brand-navy/20 bg-white px-4 py-3 text-sm"
+                  className="rounded-lg border border-brand-gold/20 bg-brand-dark-alt px-4 py-3 text-sm text-brand-cream placeholder:text-brand-slate/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 />
 
                 <button
@@ -125,4 +125,3 @@ export default function ContactPage() {
     </>
   );
 }
-

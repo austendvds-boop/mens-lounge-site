@@ -94,3 +94,14 @@
 - [x] Reduce featured services to 3 and update copy tone
 - [x] Run verification (`npm run build`, homepage desktop+mobile screenshots, scroll-header behavior check)
 - [x] Commit and push to `origin/main`
+
+## Batch 2 — Interior Pages Premium Redesign (V2 Alignment Retry)
+
+- [x] Restyle `/services` to full dark/gold premium system (cards, tables, prices, CTA copy)
+- [x] Restyle `/booking` cards and walk-in panel to dark/gold surfaces
+- [x] Restyle `/locations`, `/locations/norterra`, `/locations/peoria` to dark/gold cards, links, and hours tables
+- [x] Restyle `/contact` cards and form controls for dark mode readability and contrast
+- [x] Restyle `/faq` and `FAQAccordion` open-state/focus styling for dark/gold treatment
+- [x] Run verification (`npm run build`)
+- [x] Update docs (`CODER-CONTEXT`, `implementation-plan`, `UI-VERIFICATION`)
+- [x] Commit and push to `origin/main`

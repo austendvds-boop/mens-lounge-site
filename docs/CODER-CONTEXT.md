@@ -357,3 +357,37 @@
 - Text/copy sanity checks confirmed:
   - testimonial stars render as `★★★★★`
   - service micro-CTA renders as `Book This →`
+
+## 2026-03-06 — Batch 2 Interior V2 Premium Alignment (Subagent)
+
+### What changed
+- Reworked all required interior routes to fully use the V2 dark/gold system:
+  - `/services`
+  - `/booking`
+  - `/locations`
+  - `/locations/norterra`
+  - `/locations/peoria`
+  - `/contact`
+  - `/faq`
+- Updated service tables/cards on `/services` to dark surfaces with gold borders, alternating dark rows, and gold prices.
+- Switched interior route primary backgrounds from light/cream to `bg-brand-dark` and card surfaces to `bg-brand-dark-alt`.
+- Updated interior link accents/phone links to gold and aligned CTA copy on `/services` to `Book Your Cut`.
+- Updated `/contact` form controls to dark input/select/textarea styling with gold borders, cream text, and preserved label accessibility.
+- Updated FAQ experience (`/faq` + `src/components/sections/FAQAccordion.tsx`) to dark accordion cards with gold open-state borders and gold focus rings.
+- Added/updated location card overlays and hours/table styling on `/locations` and location detail pages for consistent premium contrast.
+
+### Files touched
+- `src/app/services/page.tsx`
+- `src/app/booking/page.tsx`
+- `src/app/locations/page.tsx`
+- `src/app/locations/norterra/page.tsx`
+- `src/app/locations/peoria/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/app/faq/page.tsx`
+- `src/components/sections/FAQAccordion.tsx`
+- `docs/CODER-CONTEXT.md`
+- `docs/implementation-plan.md`
+- `docs/UI-VERIFICATION.md`
+
+### Verification
+- `npm run build` passes clean (Next build + `next-sitemap`).

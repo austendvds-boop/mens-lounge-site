@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionReveal } from "@/components/motion/MotionReveal";
@@ -19,7 +19,7 @@ export const metadata: Metadata = buildPageMetadata(
 export default function LocationsPage() {
   return (
     <>
-      <section className="bg-brand-cream py-14 md:py-20">
+      <section className="bg-brand-dark py-14 md:py-20">
         <div className="container-shell">
           <MotionReveal>
             <SectionHeading
@@ -33,7 +33,7 @@ export default function LocationsPage() {
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             {locations.map((location, index) => (
               <MotionReveal key={location.slug} delayMs={index * 70}>
-                <article className="motion-surface overflow-hidden rounded-xl2 border border-brand-navy/15 bg-white shadow-card">
+                <article className="motion-surface overflow-hidden rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt shadow-card">
                   <div className="relative aspect-[16/9]">
                     {/* PLACEHOLDER: Replace with owner-supplied location photo. */}
                     <Image
@@ -44,22 +44,23 @@ export default function LocationsPage() {
                       loading="lazy"
                       className="object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
                   </div>
 
                   <div className="space-y-5 p-6">
                     <div>
-                      <h2 className="text-2xl font-bold">{location.title}</h2>
+                      <h2 className="text-2xl font-bold text-brand-cream">{location.title}</h2>
                       <p className="mt-2 text-sm text-brand-slate">{location.addressLine1}</p>
                       <p className="text-sm text-brand-slate">{location.addressLine2}</p>
-                      <a href={location.phoneHref} className="motion-link mt-1 inline-block text-sm font-semibold text-brand-navy">
+                      <a href={location.phoneHref} className="motion-link mt-1 inline-block text-sm font-semibold text-brand-gold">
                         {location.phoneDisplay}
                       </a>
                     </div>
 
-                    <div className="rounded-lg border border-brand-navy/10 bg-brand-cream/70 p-4 text-sm">
+                    <div className="rounded-lg border border-brand-gold/20 bg-brand-dark p-4 text-sm">
                       {location.hours.map((hour) => (
-                        <div key={hour.day} className="flex justify-between gap-3 py-1">
-                          <span className="font-semibold text-brand-charcoal">{hour.day}</span>
+                        <div key={hour.day} className="flex justify-between gap-3 border-b border-brand-gold/10 py-1 last:border-b-0">
+                          <span className="font-semibold text-brand-cream">{hour.day}</span>
                           <span className="text-right text-brand-slate">{hour.hours}</span>
                         </div>
                       ))}
@@ -93,7 +94,7 @@ export default function LocationsPage() {
                       </TrackedButton>
                     </div>
 
-                    <Link href={`/locations/${location.slug}`} className="motion-link inline-block text-sm font-semibold text-brand-navy underline-offset-4">
+                    <Link href={`/locations/${location.slug}`} className="motion-link inline-block text-sm font-semibold text-brand-gold underline-offset-4">
                       View full location details →
                     </Link>
                   </div>
@@ -108,4 +109,3 @@ export default function LocationsPage() {
     </>
   );
 }
-

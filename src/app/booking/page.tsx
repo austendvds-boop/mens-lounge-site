@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { TrackedButton } from "@/components/analytics/TrackedButton";
 import { MotionReveal } from "@/components/motion/MotionReveal";
 import { CTABanner } from "@/components/sections/CTABanner";
@@ -18,7 +18,7 @@ export const metadata: Metadata = buildPageMetadata(
 export default function BookingPage() {
   return (
     <>
-      <section className="bg-brand-cream py-14 md:py-20">
+      <section className="bg-brand-dark py-14 md:py-20">
         <div className="container-shell">
           <MotionReveal>
             <SectionHeading
@@ -32,16 +32,16 @@ export default function BookingPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {locations.map((location, index) => (
               <MotionReveal key={location.slug} delayMs={index * 70}>
-                <article className="motion-surface rounded-xl2 border border-brand-navy/15 bg-white p-6 shadow-card">
-                  <h2 className="text-2xl font-bold">{location.title}</h2>
+                <article className="motion-surface rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6 shadow-card">
+                  <h2 className="text-2xl font-bold text-brand-cream">{location.title}</h2>
                   <p className="mt-3 text-sm text-brand-slate">{location.addressLine1}</p>
                   <p className="text-sm text-brand-slate">{location.addressLine2}</p>
-                  <a href={location.phoneHref} className="motion-link mt-2 block w-fit text-sm font-semibold text-brand-navy">
+                  <a href={location.phoneHref} className="motion-link mt-2 block w-fit text-sm font-semibold text-brand-gold">
                     {location.phoneDisplay}
                   </a>
 
                   {location.slug === "peoria" && isPeoriaFallbackLink ? (
-                    <p className="mt-4 rounded-lg border border-brand-gold/45 bg-brand-gold/15 px-3 py-2 text-sm text-brand-charcoal">
+                    <p className="mt-4 rounded-lg border border-brand-gold/45 bg-brand-gold/10 px-3 py-2 text-sm text-brand-cream">
                       Online booking for Peoria opens in our shared booking page right now.
                     </p>
                   ) : null}
@@ -62,8 +62,8 @@ export default function BookingPage() {
           </div>
 
           <MotionReveal delayMs={120}>
-            <div className="motion-surface mt-10 rounded-xl2 border border-brand-navy/15 bg-white p-6 text-center">
-              <p className="text-brand-charcoal">
+            <div className="motion-surface mt-10 rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6 text-center">
+              <p className="text-brand-cream">
                 Prefer to walk in? We welcome walk-ins at both locations during all business hours.
               </p>
               <p className="mt-2 text-sm text-brand-slate">
@@ -78,4 +78,3 @@ export default function BookingPage() {
     </>
   );
 }
-

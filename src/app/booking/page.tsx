@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 const isPeoriaFallbackLink = PEORIA_BOOKING_URL === NORTERRA_BOOKING_URL;
 
 export const metadata: Metadata = buildPageMetadata(
-  "Book Now · Men's Lounge Barbershop",
+  "Book Your Cut · Men's Lounge Barbershop",
   "Book your appointment online at Men's Lounge Barbershop. Pick your location, choose your barber, and skip the wait.",
   "/booking",
 );

@@ -173,3 +173,16 @@ Verification focus for this batch:
 - Contact form input readability on dark background
 - FAQ accordion open-state border contrast
 - Gold primary CTA prominence and route-level call-to-action consistency
+
+## Batch 3 Execution Note (2026-03-06)
+Routes/components touched in polish pass:
+- /booking (metadata copy consistency)
+- /contact, /locations, /locations/norterra, /locations/peoria (map iframe V2 border styling via shared MapEmbed)
+- 
+ot-found route (V2 dark/gold consistency + CTA copy)
+- Shared motion system (globals.css, MotionReveal) affecting reveal timing on all major routes
+
+Verification focus for this pass:
+- reduced-motion-safe reveal behavior on mobile
+- no remaining Book Now copy in user-facing CTAs/metadata
+- map embeds visually consistent with V2 palette

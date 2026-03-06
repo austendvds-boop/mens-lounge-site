@@ -420,3 +420,28 @@
 
 ### Verification
 - `npm run build` passes clean (Next build + `next-sitemap`).
+
+## 2026-03-06 — Batch 3 Motion + Conversion Polish (Pre-deploy)
+
+### What changed
+- Tuned reveal motion behavior for better mobile pacing:
+  - Added a mobile override in src/app/globals.css to reduce --motion-distance-md from 30px to 24px at <=768px.
+  - Tightened reveal trigger timing in src/components/motion/MotionReveal.tsx by changing observer ootMargin from -8% to -5%.
+- Completed conversion copy consistency cleanup:
+  - Updated booking page metadata title to Book Your Cut · Men's Lounge Barbershop in src/app/booking/page.tsx.
+  - Updated 404 recovery CTA copy from Book Now to Book Your Cut in src/app/not-found.tsx.
+- Completed visual consistency pass on map surfaces:
+  - Updated map iframe border styling from navy to V2 gold tint in src/components/ui/MapEmbed.tsx.
+- Refreshed src/app/not-found.tsx to match V2 dark/gold visual system and accessible contrast (dark surface, gold accents, cream text).
+
+### Files touched
+- src/app/globals.css
+- src/components/motion/MotionReveal.tsx
+- src/app/booking/page.tsx
+- src/components/ui/MapEmbed.tsx
+- src/app/not-found.tsx
+
+### Verification
+- 
+pm run build passes clean (Next build + 
+ext-sitemap).

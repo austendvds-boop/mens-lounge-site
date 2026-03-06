@@ -119,3 +119,16 @@
 - [x] Run verification (`npm run build`)
 - [x] Update docs (`docs/CODER-CONTEXT.md`, `docs/ralph-context.md`, `docs/implementation-plan.md`)
 - [x] Commit and push to `origin/main`
+
+## Batch 3 — Polish, Motion Tuning, Conversion Optimization + Final Deploy Verification
+
+- [x] Read required refs (docs/V2-BLUEPRINT.md, docs/UI-VERIFICATION.md)
+- [x] Tune motion behavior for mobile and reveal timing (globals.css, MotionReveal.tsx)
+- [x] Complete conversion copy consistency pass (Book Your Cut wording sweep)
+- [x] Align straggler UI surfaces to V2 dark/gold tokens (MapEmbed, 
+ot-found)
+- [x] Run build verification (
+pm run build)
+- [ ] Capture full screenshot set (desktop + mobile) for key routes
+- [ ] Commit and push to origin/main
+- [ ] Verify production deploy READY and smoke-check impacted routes

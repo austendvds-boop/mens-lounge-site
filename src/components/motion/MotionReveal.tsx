@@ -50,7 +50,7 @@ export function MotionReveal({ children, className, delayMs = 0 }: MotionRevealP
       },
       {
         threshold: 0.15,
-        rootMargin: "0px 0px -8% 0px",
+        rootMargin: "0px 0px -5% 0px",
       },
     );
 

@@ -314,3 +314,19 @@
 
 ### Verification
 - `npm run build` → pass.
+
+## Batch 3 — Motion Tuning + Conversion Consistency Polish (2026-03-06)
+
+### Completed scope in this pass
+- Added mobile-specific motion tuning in src/app/globals.css so reveal travel distance drops from 30px to 24px on <=768px screens.
+- Tightened reveal trigger behavior in src/components/motion/MotionReveal.tsx by updating observer ootMargin to  px 0px -5% 0px.
+- Completed conversion CTA wording cleanup:
+  - booking metadata title now uses Book Your Cut in src/app/booking/page.tsx
+  - 404 page primary CTA now uses Book Your Cut in src/app/not-found.tsx
+- Updated map surface styling to V2 gold borders in src/components/ui/MapEmbed.tsx.
+- Restyled 404 route to V2 dark/gold treatment for visual consistency and contrast.
+
+### Verification
+- 
+pm run build → pass (Next build + 
+ext-sitemap).

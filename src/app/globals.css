@@ -21,6 +21,12 @@
   --motion-stagger: 100ms;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --motion-distance-md: 24px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

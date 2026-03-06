@@ -38,7 +38,7 @@ export default function BookingPage() {
 
                 {location.slug === "peoria" && isPeoriaFallbackLink ? (
                   <p className="mt-4 rounded-lg border border-brand-gold/45 bg-brand-gold/15 px-3 py-2 text-sm text-brand-charcoal">
-                    TODO: This button currently uses Norterra&apos;s booking link until we get Peoria&apos;s direct booking link.
+                    Online booking for Peoria opens in our shared booking page right now.
                   </p>
                 ) : null}
 

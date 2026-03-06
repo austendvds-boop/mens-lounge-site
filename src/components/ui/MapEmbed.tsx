@@ -11,7 +11,8 @@ export function MapEmbed({ src, title, className }: MapEmbedProps) {
     <iframe
       title={title}
       src={src}
-      loading="lazy"
+      loading="eager"
+      allowFullScreen
       referrerPolicy="no-referrer-when-downgrade"
       className={cn("h-72 w-full rounded-xl border border-brand-navy/15", className)}
     />

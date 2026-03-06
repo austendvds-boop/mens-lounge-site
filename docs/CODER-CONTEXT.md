@@ -258,3 +258,24 @@
   - `out/sitemap.xml`
   - `out/sitemap-0.xml` (includes all required routes)
 
+
+## 2026-03-05 — Batch 1 Hotfix TODO Cleanup + Map Panel Repair
+
+### What changed
+- Removed customer-facing internal TODO text from:
+  - `src/app/booking/page.tsx`
+  - `src/app/locations/peoria/page.tsx`
+- Hardened env var fallback handling in `src/lib/constants.ts` so blank map or booking env vars now safely fall back to defaults instead of rendering empty values.
+- Updated `MapEmbed` in `src/components/ui/MapEmbed.tsx` to eagerly load maps and allow full-screen mode to prevent blank map panels on affected mobile routes.
+
+### Verification
+- `npm run build` passes.
+- Local route checks return HTTP 200 for:
+  - `/booking`
+  - `/locations`
+  - `/locations/norterra`
+  - `/locations/peoria`
+  - `/contact`
+- Built output checks pass:
+  - no public `TODO` text in booking and Peoria location pages
+  - map embed URLs are present in `/locations`, `/locations/norterra`, `/locations/peoria`, and `/contact`

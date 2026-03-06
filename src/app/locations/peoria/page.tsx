@@ -93,7 +93,7 @@ export default function PeoriaLocationPage() {
               </p>
               {isPeoriaFallbackLink ? (
                 <p className="mt-2 rounded-lg border border-brand-gold/45 bg-brand-gold/15 px-3 py-2 text-sm text-brand-charcoal">
-                  TODO: Replace this button with Peoria&apos;s direct booking link when the owner sends it.
+                  Online booking for Peoria opens in our shared booking page right now.
                 </p>
               ) : null}
               <div className="mt-4 space-y-3">

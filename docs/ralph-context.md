@@ -187,3 +187,20 @@
 - Internal link crawl of exported site → `NO_BROKEN_INTERNAL_LINKS`
 - Booking CTA checks across major sections/routes → `BOOKING_CTA_CHECKS_PASS`
 
+
+## Batch 1 Hotfix TODO Cleanup + Map Panel Repair — 2026-03-05
+
+### Completed fixes
+- Removed public TODO/internal placeholder notice copy from:
+  - `/booking`
+  - `/locations/peoria`
+- Fixed map panel reliability issue by:
+  - guarding map/book links against blank env vars in `src/lib/constants.ts`
+  - forcing map iframe eager load + full-screen support in `src/components/ui/MapEmbed.tsx`
+
+### Verification
+- `npm run build` → pass
+- Local route checks (`/booking`, `/locations`, `/locations/norterra`, `/locations/peoria`, `/contact`) → HTTP 200
+- Exported HTML checks:
+  - no `TODO` text on affected customer pages
+  - map embed URLs present on `/locations`, `/locations/norterra`, `/locations/peoria`, `/contact`

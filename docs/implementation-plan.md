@@ -59,3 +59,12 @@
 - [ ] Commit and push to `origin/main`
 
 
+
+## Batch 1 — Hotfix TODO Cleanup + Map Panel Fixes
+
+- [x] Remove customer-facing TODO/internal placeholder text from `/booking` and `/locations/peoria`
+- [x] Repair map panel rendering on `/locations`, `/locations/norterra`, `/locations/peoria`, and `/contact`
+- [x] Keep all customer-facing copy plain and customer-safe
+- [x] Run build and required route checks
+- [x] Commit and push to `origin/main`
+- [x] Verify production deployment status and smoke-check affected routes

@@ -210,3 +210,14 @@
 ---
 
 **End of UI Verification Spec**
+
+---
+
+## 2026-03-05 Hotfix Regression Checks (Batch 1)
+
+- [ ] `/booking`: no internal/TODO copy appears in the Peoria booking notice.
+- [ ] `/locations/peoria`: no internal/TODO copy appears in the booking panel.
+- [ ] `/locations` (mobile + desktop): both location map cards render with visible map content (no empty panel).
+- [ ] `/locations/norterra` mobile: map panel renders with visible map content.
+- [ ] `/locations/peoria` mobile: map panel renders with visible map content.
+- [ ] `/contact` mobile: Peoria map panel renders with visible map content.

@@ -1,36 +1,5 @@
 # Ralph Context
 
-## Batch 1 V2 Dark/Gold Design Reset + Homepage Rebuild — 2026-03-06
-
-### Files created/modified
-- `tailwind.config.ts`
-- `src/app/layout.tsx`
-- `src/app/globals.css`
-- `src/app/page.tsx`
-- `src/components/layout/Header.tsx`
-- `src/components/layout/Footer.tsx`
-- `src/components/layout/MobileNav.tsx`
-- `src/components/ui/Button.tsx`
-- `src/components/ui/Card.tsx`
-- `src/components/ui/Badge.tsx`
-- `src/components/ui/SectionHeading.tsx`
-- `src/components/ui/MapEmbed.tsx`
-- `src/components/sections/Hero.tsx`
-- `src/components/sections/LeadCapture.tsx`
-- `src/components/sections/ServiceTeaser.tsx`
-- `src/components/sections/Testimonials.tsx`
-- `src/components/sections/LocationCards.tsx`
-- `src/components/sections/DiscountBanner.tsx`
-- `src/components/sections/CTABanner.tsx`
-
-### Key exports
-- `LeadCapture` from `src/components/sections/LeadCapture.tsx`
-- Updated design token usage through Tailwind theme + `font-display` typography support
-
-### Gotchas for next batch
-- Keep dark/gold token usage consistent; avoid reintroducing legacy navy/green classes.
-- Hero remains high-priority image section; preserve performance/a11y behavior.
-
 ## Batch 0 Critical Fixes + Hero Copy — 2026-03-06
 
 ### Files created/modified
@@ -61,3 +30,17 @@
 ### Gotchas for next batch
 - Keep the responsive hero heading scale as-is to prevent extra wrapping on 375px-width screens.
 - For Windows builds, if `next build` throws transient `.next\server\pages\_app.js.nft.json` ENOENT, clear `.next` and rerun build.
+
+## Batch 0 Critical Fixes + Hero Copy — Retry 2 Build Gate Pass — 2026-03-06
+
+### Files created/modified
+- `docs/ralph-context.md`
+
+### Key exports
+- No new exports.
+- Re-verified `src/components/sections/Hero.tsx` is correct with the requested copy and heading class scale.
+- Re-verified `next.config.js` still includes `images: { unoptimized: true }`.
+
+### Gotchas for next batch
+- Transient Next.js ENOENT build errors for missing `.next\\server\\pages-manifest.json`/`_app.js.nft.json` can occur on this Windows setup; deleting `.next` (and optionally `out`) before rebuild resolves it.
+- No additional Hero or config edits were needed in this retry; avoid unnecessary churn in those files.

@@ -56,7 +56,7 @@
 - [x] Update README with deploy + verification steps
 - [x] Run verification (`npm run build`, internal link crawl, booking CTA checks)
 - [x] Update docs (`CODER-CONTEXT`, `ralph-context`, `implementation-plan`)
-- [ ] Commit and push to `origin/main`
+- [x] Commit and push to `origin/main`
 
 
 
@@ -93,4 +93,4 @@
 - [x] Update homepage conversion sections (`Hero`, `Testimonials`, `LocationCards`, `DiscountBanner`, `CTABanner`)
 - [x] Reduce featured services to 3 and update copy tone
 - [x] Run verification (`npm run build`, homepage desktop+mobile screenshots, scroll-header behavior check)
-- [ ] Commit and push to `origin/main`
+- [x] Commit and push to `origin/main`

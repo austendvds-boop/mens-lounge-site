@@ -1,4 +1,4 @@
-export type ServiceItem = {
+﻿export type ServiceItem = {
   name: string;
   price: string;
   description?: string;
@@ -20,26 +20,23 @@ export const featuredServices: FeaturedService[] = [
   {
     title: "Men's Haircut",
     priceLabel: "From $23",
-    description: "Precision cuts for every style — fades, tapers, classics.",
+    description:
+      "The essential. Scissor or clipper, your choice — finished with a hot towel and neck cleanup.",
     image: "/images/services/haircut-fade.jpg",
   },
   {
     title: "Hot Towel Shave",
     priceLabel: "$30",
-    description: "Old-fashioned straight razor shave with hot towels and facial scrubs.",
+    description:
+      "Old-fashioned straight razor. Hot towels. The shave you've been missing.",
     image: "/images/services/hot-towel-shave.jpg",
-  },
-  {
-    title: "Beard Trim",
-    priceLabel: "From $7",
-    description: "Shape, line, and detail your beard or mustache.",
-    image: "/images/services/beard-trim.jpg",
   },
   {
     title: "The Man of the Hour",
     priceLabel: "$75",
-    description: "The full experience — haircut, shave, and facial treatment.",
-    image: "/images/services/kids-cut.jpg",
+    description:
+      "The full experience — haircut, shave, and the hand massage you didn't know you needed.",
+    image: "/images/services/beard-trim.jpg",
   },
 ];
 

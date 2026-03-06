@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type BadgeProps = {
@@ -10,7 +10,7 @@ export function Badge({ children, className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full bg-brand-gold/15 px-3 py-1 text-sm font-semibold text-brand-navy",
+        "inline-flex items-center rounded-full bg-brand-gold px-3 py-1 text-sm font-semibold text-brand-dark",
         className,
       )}
     >

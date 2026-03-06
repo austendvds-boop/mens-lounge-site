@@ -3,15 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #faf7f2;
-  --foreground: #2d2d2d;
-  --motion-duration-fast: 180ms;
-  --motion-duration-base: 280ms;
-  --motion-duration-slow: 420ms;
-  --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --background: #0f0f0f;
+  --foreground: #f5f5f0;
+  --accent: #c9a962;
+  --accent-hover: #d4b872;
+  --accent-glow: 0 0 20px rgba(201, 169, 98, 0.3);
+  --surface: #1a1a1a;
+  --surface-border: rgba(201, 169, 98, 0.15);
+  --motion-duration-fast: 250ms;
+  --motion-duration-base: 450ms;
+  --motion-duration-slow: 700ms;
+  --motion-duration-hero: 900ms;
+  --motion-ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --motion-distance-sm: 8px;
-  --motion-distance-md: 16px;
+  --motion-distance-sm: 12px;
+  --motion-distance-md: 30px;
+  --motion-stagger: 100ms;
 }
 
 * {
@@ -22,6 +29,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
   background: var(--background);
   color: var(--foreground);
 }
@@ -32,20 +40,20 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid #1b2a4a;
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
 @layer base {
   body {
-    @apply font-sans antialiased;
+    @apply font-body antialiased;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply text-brand-navy;
+    @apply font-display text-brand-cream;
   }
 }
 
@@ -63,13 +71,18 @@ a {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -0.2rem;
+    bottom: -0.22rem;
     height: 1px;
     width: 100%;
-    background-color: currentColor;
+    background-color: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--motion-duration-base) var(--motion-ease-standard);
+  }
+
+  .motion-link:hover,
+  .motion-link:focus-visible {
+    color: var(--accent-hover);
   }
 
   .motion-link:hover::after,
@@ -81,13 +94,15 @@ a {
     transition:
       transform var(--motion-duration-base) var(--motion-ease-standard),
       box-shadow var(--motion-duration-base) var(--motion-ease-standard),
-      border-color var(--motion-duration-base) var(--motion-ease-soft);
+      border-color var(--motion-duration-base) var(--motion-ease-soft),
+      background-color var(--motion-duration-base) var(--motion-ease-soft),
+      color var(--motion-duration-fast) var(--motion-ease-soft);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .motion-surface:hover {
-      transform: translateY(calc(var(--motion-distance-sm) * -0.5));
-      box-shadow: 0 18px 36px -24px rgba(27, 42, 74, 0.45);
+      transform: translateY(-6px);
+      box-shadow: 0 22px 40px -28px rgba(0, 0, 0, 0.9);
     }
   }
 
@@ -111,7 +126,7 @@ a {
   }
 
   .motion-fade-up {
-    animation: motion-fade-up var(--motion-duration-slow) var(--motion-ease-standard) both;
+    animation: motion-fade-up var(--motion-duration-hero) var(--motion-ease-standard) both;
     animation-delay: var(--reveal-delay, 0ms);
   }
 }
@@ -145,7 +160,6 @@ a {
 
   .motion-surface:hover {
     transform: none;
-    box-shadow: inherit;
   }
 
   .motion-link::after {

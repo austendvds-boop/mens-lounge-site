@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { type CSSProperties, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 type NavLink = {
@@ -44,7 +44,7 @@ export function MobileNav({ links }: MobileNavProps) {
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-nav-drawer"
-        className="motion-surface rounded-md border border-brand-navy/20 p-2 text-brand-navy"
+        className="motion-surface rounded-md border border-brand-gold/40 bg-brand-dark-alt p-2 text-brand-gold"
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
@@ -53,7 +53,7 @@ export function MobileNav({ links }: MobileNavProps) {
         <>
           <button
             type="button"
-            className="fixed inset-0 z-40 bg-brand-navy/50"
+            className="fixed inset-0 z-40 bg-brand-dark/80"
             aria-label="Close menu"
             onClick={() => setIsOpen(false)}
           />
@@ -62,27 +62,26 @@ export function MobileNav({ links }: MobileNavProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile menu"
-            className="motion-fade-up fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm bg-white p-6 shadow-2xl"
-            style={{ "--reveal-delay": "40ms" } as CSSProperties}
+            className="fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm border-l border-brand-gold/20 bg-brand-dark p-6 shadow-2xl"
           >
             <div className="mb-8 flex items-center justify-between">
-              <p className="text-lg font-bold text-brand-navy">Menu</p>
+              <p className="text-lg font-semibold text-brand-cream">Menu</p>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close menu"
-                className="motion-surface rounded-md border border-brand-navy/20 p-2 text-brand-navy"
+                className="motion-surface rounded-md border border-brand-gold/40 bg-brand-dark-alt p-2 text-brand-gold"
               >
                 <X size={20} />
               </button>
             </div>
 
-            <nav className="space-y-5">
+            <nav className="space-y-5" aria-label="Mobile navigation">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="motion-link block w-fit text-base font-semibold text-brand-charcoal"
+                  className="motion-link block w-fit text-base font-semibold text-brand-cream"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -94,10 +93,10 @@ export function MobileNav({ links }: MobileNavProps) {
               <Button
                 href="/booking"
                 className="w-full"
-                ariaLabel="Book now"
+                ariaLabel="Book your cut"
                 onClick={() => setIsOpen(false)}
               >
-                Book Now
+                Book Your Cut
               </Button>
             </div>
           </div>

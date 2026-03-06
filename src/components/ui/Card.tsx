@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type CardProps = {
@@ -10,8 +10,8 @@ export function Card({ children, className }: CardProps) {
   return (
     <article
       className={cn(
-        "motion-surface rounded-xl border border-brand-gold/20 bg-white p-6 shadow-md",
-        className
+        "motion-surface rounded-xl2 border border-brand-gold/20 bg-brand-dark-alt p-6 shadow-card",
+        className,
       )}
     >
       {children}

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+﻿import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -7,7 +7,18 @@ import { SITE_URL } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700", "800", "900"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -27,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-brand-dark">
       <head>
         <link
           rel="preload"
@@ -36,15 +47,17 @@ export default function RootLayout({
           fetchPriority="high"
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${playfair.variable} bg-brand-dark font-body text-brand-cream`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand-dark-alt focus:px-4 focus:py-2 focus:text-brand-cream"
         >
           Skip to main content
         </a>
         <Header />
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="pt-20">
+          {children}
+        </main>
         <Footer />
         <GoogleAnalytics />
       </body>

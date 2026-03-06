@@ -313,3 +313,47 @@
 
 ### Verification
 - `npm run build` passes clean (Next build + `next-sitemap`).
+
+## 2026-03-06 — Batch 1 V2 Visual System + Homepage Conversion Revamp
+
+### What changed
+- Replaced the global design foundation with V2 dark/gold tokens in `tailwind.config.ts` and `src/app/globals.css` (including updated motion timings and reduced-motion-safe behavior).
+- Upgraded typography system in `src/app/layout.tsx` to Inter (`--font-body`) + Playfair Display (`--font-display`) and applied dark base shell classes.
+- Rebuilt CTA hierarchy in `src/components/ui/Button.tsx` to gold primary, gold-outline secondary, and cream ghost styles (removing green CTA usage from shared button primitives).
+- Updated shared UI primitives for V2 contrast and premium styling:
+  - `src/components/ui/Card.tsx`
+  - `src/components/ui/Badge.tsx`
+  - `src/components/ui/SectionHeading.tsx`
+- Updated shared constants in `src/lib/constants.ts`:
+  - migrated `BRAND_COLORS` to V2 values
+  - added `LEAD_CAPTURE_ENDPOINT` with env fallback to contact endpoint
+- Refreshed layout/navigation for homepage conversion flow:
+  - `src/components/layout/Header.tsx` (transparent → solid on scroll, simplified nav)
+  - `src/components/layout/MobileNav.tsx` (dark drawer + gold CTA)
+  - `src/components/layout/Footer.tsx` (dark token alignment + Instagram icon)
+- Reworked homepage sections for Batch 1 conversion order and copy:
+  - `src/components/sections/Hero.tsx`
+  - `src/components/sections/LeadCapture.tsx` (new)
+  - `src/components/sections/ServiceCards.tsx` (new, replaces `ServiceTeaser`)
+  - `src/components/sections/Testimonials.tsx`
+  - `src/components/sections/LocationCards.tsx`
+  - `src/components/sections/DiscountBanner.tsx`
+  - `src/components/sections/CTABanner.tsx`
+  - `src/app/page.tsx` (new order: Hero → LeadCapture → ServiceCards → Testimonials → LocationCards → DiscountBanner → CTABanner)
+- Updated homepage featured data in `src/data/services.ts` to 3 featured cards with V2 copy.
+- Deleted deprecated `src/components/sections/ServiceTeaser.tsx`.
+- Updated docs:
+  - `docs/ENV-VARS.md` (`NEXT_PUBLIC_LEAD_CAPTURE_ENDPOINT`)
+  - `docs/UI-VERIFICATION.md` timestamp refresh
+
+### Verification completed
+- `npm run build` passes (Next build + `next-sitemap`).
+- Homepage screenshot verification captured:
+  - desktop full-page (`1440px`): `C:\Users\austen\.openclaw\media\browser\00464816-69d7-4223-9c0b-6232a2783a32.jpg`
+  - mobile full-page (`375px`): `C:\Users\austen\.openclaw\media\browser\de33b854-3826-4497-9c95-c2422b5d2980.jpg`
+- Header behavior validated by runtime check:
+  - top: `rgba(0, 0, 0, 0)`
+  - scrolled: `rgba(15, 15, 15, 0.93)`
+- Text/copy sanity checks confirmed:
+  - testimonial stars render as `★★★★★`
+  - service micro-CTA renders as `Book This →`

@@ -5,6 +5,11 @@
 
 ## Optional
 
+### `NEXT_PUBLIC_LEAD_CAPTURE_ENDPOINT`
+- **Default:** falls back to `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT`
+- **Used for:** homepage first-visit offer form (`Claim My 25% Off`).
+- **Source:** Form provider endpoint for lead capture submissions.
+
 ### `NEXT_PUBLIC_SQUIRE_NORTERRA_URL`
 - **Default:** `https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix`
 - **Used for:** Primary booking link across the site.

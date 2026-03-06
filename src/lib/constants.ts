@@ -27,12 +27,15 @@ export const INSTAGRAM_URL =
   "https://www.instagram.com/mens_lounge_barbershop_az/";
 
 export const BRAND_COLORS = {
-  navy: "#1B2A4A",
-  gold: "#C8A96E",
-  cream: "#FAF7F2",
-  charcoal: "#2D2D2D",
-  slate: "#64748B",
-  ctaGreen: "#1A7A4C",
+  navy: "#0F0F0F",
+  dark: "#0F0F0F",
+  darkAlt: "#1A1A1A",
+  gold: "#C9A962",
+  goldHover: "#D4B872",
+  goldMuted: "rgba(201,169,98,0.15)",
+  cream: "#F5F5F0",
+  charcoal: "#1A1A1A",
+  slate: "#A0A0A0",
 } as const;
 
 export const MAPS_URLS = {
@@ -54,3 +57,9 @@ export const MAP_EMBED_URLS = {
 
 export const CONTACT_FORM_ENDPOINT =
   process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT ?? "https://formspree.io/f/replace-this-id";
+
+export const LEAD_CAPTURE_ENDPOINT = getEnvOrFallback(
+  process.env.NEXT_PUBLIC_LEAD_CAPTURE_ENDPOINT,
+  CONTACT_FORM_ENDPOINT,
+);
+

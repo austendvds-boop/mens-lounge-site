@@ -1,4 +1,4 @@
-type SectionHeadingProps = {
+﻿type SectionHeadingProps = {
   title: string;
   subtitle?: string;
   description?: string;
@@ -21,13 +21,13 @@ export function SectionHeading({
   return (
     <div className={resolvedAlign === "center" ? "text-center" : "text-left"}>
       {eyebrow ? (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-gold">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-bold text-brand-navy md:text-4xl">{title}</h2>
+      <h2 className="font-display text-4xl text-brand-cream md:text-5xl">{title}</h2>
       {supportingText ? (
-        <p className="mt-3 text-base text-brand-slate md:text-lg">{supportingText}</p>
+        <p className="mt-4 text-base text-brand-slate md:text-lg">{supportingText}</p>
       ) : null}
     </div>
   );

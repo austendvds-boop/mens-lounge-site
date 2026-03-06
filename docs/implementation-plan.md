@@ -80,3 +80,17 @@
 - [x] Verify build passes (`npm run build`)
 - [x] Commit and push to `origin/main`
 - [x] Verify production deployment READY and smoke-check required routes
+
+## Batch 1 — Visual System + Homepage Conversion Revamp (V2)
+
+- [x] Read all required references (`docs/V2-BLUEPRINT.md`, `docs/UI-VERIFICATION.md`, creative brief, `docs/ralph-context.md`)
+- [x] Replace foundation tokens with dark/gold V2 system in Tailwind + globals
+- [x] Upgrade typography to Inter + Playfair pairing
+- [x] Replace CTA variants to gold-first hierarchy and remove green CTA usage
+- [x] Implement transparent-to-solid header behavior and simplify nav (desktop + mobile)
+- [x] Add `LeadCapture` section and wire first-visit offer form endpoint fallback
+- [x] Replace `ServiceTeaser` with `ServiceCards` and update homepage order
+- [x] Update homepage conversion sections (`Hero`, `Testimonials`, `LocationCards`, `DiscountBanner`, `CTABanner`)
+- [x] Reduce featured services to 3 and update copy tone
+- [x] Run verification (`npm run build`, homepage desktop+mobile screenshots, scroll-header behavior check)
+- [ ] Commit and push to `origin/main`

@@ -8,20 +8,20 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function LocationCards() {
   return (
-    <section id="locations" className="bg-brand-cream py-14 md:py-20">
+    <section id="locations" className="bg-brand-dark py-16 md:py-24">
       <div className="container-shell space-y-10">
         <MotionReveal>
           <SectionHeading
             eyebrow="Two Convenient Locations"
-            title="Find Your Closest Chair"
-            description="Both locations are on Happy Valley Road with walk-ins welcome every day we are open."
+            title="Pick Your Closest Chair"
+            description="Both shops are on Happy Valley Road, with walk-ins welcome every day we're open."
             centered
           />
         </MotionReveal>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {locations.map((location, index) => (
-            <MotionReveal key={location.slug} delayMs={index * 70}>
+            <MotionReveal key={location.slug} delayMs={index * 100}>
               <Card className="overflow-hidden p-0">
                 <div className="relative aspect-[16/9]">
                   {/* PLACEHOLDER: Replace with owner-supplied location photo. */}
@@ -33,16 +33,17 @@ export function LocationCards() {
                     loading="lazy"
                     className="object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-brand-dark/30 to-transparent" />
                 </div>
 
                 <div className="space-y-4 p-6">
                   <div>
-                    <h3 className="text-2xl font-bold">{location.title}</h3>
+                    <h3 className="font-display text-3xl text-brand-cream">{location.title}</h3>
                     <p className="mt-2 text-sm text-brand-slate">{location.addressLine1}</p>
                     <p className="text-sm text-brand-slate">{location.addressLine2}</p>
                     <a
                       href={location.phoneHref}
-                      className="motion-link mt-1 block w-fit text-sm font-semibold text-brand-navy"
+                      className="motion-link mt-1 block w-fit text-sm font-semibold text-brand-gold"
                     >
                       {location.phoneDisplay}
                     </a>
@@ -50,10 +51,10 @@ export function LocationCards() {
 
                   <Badge>{location.hoursBadge}</Badge>
 
-                  <div className="rounded-lg border border-brand-navy/10 bg-brand-cream/70 p-4 text-sm">
+                  <div className="rounded-lg border border-brand-gold/20 bg-brand-dark p-4 text-sm">
                     {location.hours.map((hour) => (
-                      <div key={hour.day} className="flex justify-between gap-4 py-1">
-                        <span className="font-semibold text-brand-charcoal">{hour.day}</span>
+                      <div key={hour.day} className="flex justify-between gap-4 border-b border-brand-gold/10 py-2 last:border-b-0">
+                        <span className="font-semibold text-brand-cream">{hour.day}</span>
                         <span className="text-right text-brand-slate">{hour.hours}</span>
                       </div>
                     ))}
@@ -87,3 +88,4 @@ export function LocationCards() {
     </section>
   );
 }
+

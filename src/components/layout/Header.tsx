@@ -16,7 +16,7 @@ export function Header() {
       <div className="container-shell flex h-20 items-center justify-between gap-4">
         <Link href="/" className="motion-surface flex items-center" aria-label="Men's Lounge home">
           <span className="font-display text-xl leading-tight text-brand-cream md:text-2xl">
-            Men&apos;s Lounge <span className="text-brand-gold">Barbershop</span>
+            Men&apos;s Lounge <span className="text-xs font-normal tracking-widest text-brand-gold/60">Barbershop</span>
           </span>
         </Link>
 

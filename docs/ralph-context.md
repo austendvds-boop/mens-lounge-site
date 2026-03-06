@@ -1,19 +1,5 @@
 # Ralph Context
 
-## Batch 0 Critical Fixes + Hero Copy — 2026-03-06
-
-### Files created/modified
-- `src/components/sections/Hero.tsx`
-- `docs/ralph-context.md`
-
-### Key exports
-- No new exports.
-- Updated `Hero` section copy and responsive heading scale only.
-
-### Gotchas for next batch
-- Hero heading sizing now uses `text-3xl sm:text-4xl md:text-5xl lg:text-7xl`; keep this to avoid 375px over-wrapping.
-- Confirmed `next.config.js` still includes `images: { unoptimized: true }` for static export compatibility.
-
 ## Batch 0 Critical Fixes + Hero Copy — Retry Commit/Verification — 2026-03-06
 
 ### Files created/modified
@@ -44,3 +30,23 @@
 ### Gotchas for next batch
 - Transient Next.js ENOENT build errors for missing `.next\\server\\pages-manifest.json`/`_app.js.nft.json` can occur on this Windows setup; deleting `.next` (and optionally `out`) before rebuild resolves it.
 - No additional Hero or config edits were needed in this retry; avoid unnecessary churn in those files.
+
+## Batch 1 Structure Overhaul — 2026-03-06
+
+### Files created/modified
+- `src/app/page.tsx`
+- `src/components/sections/TrustBar.tsx` (new)
+- `src/components/sections/LeadCapture.tsx`
+- `src/components/layout/Header.tsx`
+- `src/components/layout/MobileNav.tsx`
+- `src/components/ui/SectionHeading.tsx`
+- `docs/ralph-context.md`
+
+### Key exports
+- Added new section export: `TrustBar` from `src/components/sections/TrustBar.tsx`.
+- Home page section order now renders as: `Hero → TrustBar → ServiceCards → Testimonials → LocationCards → LeadCapture → CTABanner`.
+- Removed `DiscountBanner` from homepage composition.
+
+### Gotchas for next batch
+- `SectionHeading` eyebrow text now renders with `eyebrow.toLowerCase()` and `fontVariant: 'small-caps'`; pass plain words/phrases (not intentional mixed-case branding) for predictable display.
+- Keep `LeadCapture` button label unchanged for now (`Claim My Discount`) per batch boundary; CTA/button copy updates are deferred to B2.

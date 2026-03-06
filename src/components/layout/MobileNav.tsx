@@ -67,7 +67,7 @@ export function MobileNav({ links }: MobileNavProps) {
           >
             <div className="mb-10 flex items-center justify-between">
               <p className="font-display text-2xl text-brand-cream">
-                Men&apos;s Lounge <span className="text-brand-gold">Barbershop</span>
+                Men&apos;s Lounge <span className="text-xs font-normal tracking-widest text-brand-gold/60">Barbershop</span>
               </p>
               <button
                 type="button"

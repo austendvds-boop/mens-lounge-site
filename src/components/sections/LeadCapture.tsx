@@ -6,10 +6,10 @@ export function LeadCapture() {
       <MotionReveal className="container-shell">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-3xl font-bold text-brand-cream md:text-4xl">
-            First Time? Get 15% Off Your First Cut
+            New to Men&apos;s Lounge? We&apos;ll take care of you.
           </h2>
           <p className="mt-3 text-base text-brand-slate md:text-lg">
-            Drop your name and email — we&apos;ll send your discount code.
+            15% off your first cut. We&apos;ll send it to your inbox.
           </p>
 
           <form action="#" method="POST" className="mt-8 grid gap-4 md:grid-cols-2">

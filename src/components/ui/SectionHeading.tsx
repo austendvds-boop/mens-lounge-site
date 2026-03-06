@@ -21,9 +21,18 @@ export function SectionHeading({
   return (
     <div className={resolvedAlign === "center" ? "text-center" : "text-left"}>
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-gold">
-          {eyebrow}
-        </p>
+        <div
+          className={`mb-4 flex items-center gap-3 ${resolvedAlign === "center" ? "justify-center" : "justify-start"}`}
+        >
+          <span className="h-px w-6 bg-brand-gold/40" />
+          <p
+            className="text-[11px] font-medium tracking-[0.25em] text-brand-gold"
+            style={{ fontVariant: "small-caps" }}
+          >
+            {eyebrow.toLowerCase()}
+          </p>
+          <span className="h-px w-6 bg-brand-gold/40" />
+        </div>
       ) : null}
       <h2 className="font-display text-3xl font-bold text-brand-cream md:text-4xl">{title}</h2>
       {supportingText ? (

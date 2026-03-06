@@ -285,3 +285,32 @@
   - Desktop 1440px full-page: `C:\Users\austen\.openclaw\media\browser\00464816-69d7-4223-9c0b-6232a2783a32.jpg`
   - Mobile 375px full-page: `C:\Users\austen\.openclaw\media\browser\de33b854-3826-4497-9c95-c2422b5d2980.jpg`
 - Header transition verified in-browser (transparent at top → dark/blur solid on scroll).
+## Batch 2 — V2 Interior Pages Premium Redesign (2026-03-06)
+
+### Completed scope
+- Upgraded all required interior routes to the V2 premium dark/gold system:
+  - `/services`
+  - `/booking`
+  - `/locations`
+  - `/locations/norterra`
+  - `/locations/peoria`
+  - `/contact`
+  - `/faq`
+- Applied dark surfaces + gold border treatment on route-level cards/panels.
+- Updated services pricing tables with dark alternating row backgrounds and gold prices.
+- Updated booking + location callout cards for V2 contrast and kept the Peoria shared-booking fallback notice.
+- Updated contact form field styles for dark mode readability (cream labels/text + gold border/focus states).
+- Updated FAQ route support card and `FAQAccordion` component to match V2 dark/gold behavior, including stronger open-state emphasis.
+
+### Files touched
+- `src/app/services/page.tsx`
+- `src/app/booking/page.tsx`
+- `src/app/locations/page.tsx`
+- `src/app/locations/norterra/page.tsx`
+- `src/app/locations/peoria/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/app/faq/page.tsx`
+- `src/components/sections/FAQAccordion.tsx`
+
+### Verification
+- `npm run build` → pass.

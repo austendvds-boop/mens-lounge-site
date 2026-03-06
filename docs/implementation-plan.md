@@ -105,3 +105,17 @@
 - [x] Run verification (`npm run build`)
 - [x] Update docs (`CODER-CONTEXT`, `implementation-plan`, `UI-VERIFICATION`)
 - [x] Commit and push to `origin/main`
+## Batch 2 — V2 Interior Pages Premium Redesign
+
+- [x] Read required refs (`docs/V2-BLUEPRINT.md`, `docs/UI-VERIFICATION.md`)
+- [x] Apply V2 dark/gold treatment to `/services`
+- [x] Apply V2 dark/gold treatment to `/booking`
+- [x] Apply V2 dark/gold treatment to `/locations`
+- [x] Apply V2 dark/gold treatment to `/locations/norterra`
+- [x] Apply V2 dark/gold treatment to `/locations/peoria`
+- [x] Apply V2 dark/gold treatment to `/contact`
+- [x] Apply V2 dark/gold treatment to `/faq`
+- [x] Update `src/components/sections/FAQAccordion.tsx` styling to V2
+- [x] Run verification (`npm run build`)
+- [x] Update docs (`docs/CODER-CONTEXT.md`, `docs/ralph-context.md`, `docs/implementation-plan.md`)
+- [x] Commit and push to `origin/main`

@@ -155,3 +155,21 @@
 ---
 
 *End of UI Verification Spec*
+
+---
+
+## Batch 2 Execution Note (2026-03-06)
+Routes updated in this batch:
+- `/services`
+- `/booking`
+- `/locations`
+- `/locations/norterra`
+- `/locations/peoria`
+- `/contact`
+- `/faq`
+
+Verification focus for this batch:
+- Dark/gold/cream token consistency across all listed interior routes
+- Contact form input readability on dark background
+- FAQ accordion open-state border contrast
+- Gold primary CTA prominence and route-level call-to-action consistency

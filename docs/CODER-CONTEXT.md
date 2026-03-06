@@ -391,3 +391,32 @@
 
 ### Verification
 - `npm run build` passes clean (Next build + `next-sitemap`).
+## 2026-03-06 — Batch 2 V2 Interior Pages Premium Redesign
+
+### What changed
+- Applied the V2 dark/gold treatment across all required interior routes:
+  - `/services`
+  - `/booking`
+  - `/locations`
+  - `/locations/norterra`
+  - `/locations/peoria`
+  - `/contact`
+  - `/faq`
+- Updated services pricing tables to dark alternating rows with gold price emphasis and unified "Book Your Cut" CTAs.
+- Updated booking cards and walk-in panel to dark surfaces with gold borders; retained Peoria fallback notice styling with gold-tinted callout.
+- Updated location detail pages (Norterra/Peoria) to V2 cards, headings, links, hours rows, and booking panels.
+- Updated contact route cards and form controls to dark inputs with gold border/focus treatment and cream labels/text.
+- Updated FAQ page support card and refreshed `FAQAccordion` styling for dark surfaces and stronger open-state gold border behavior.
+
+### Files touched
+- `src/app/services/page.tsx`
+- `src/app/booking/page.tsx`
+- `src/app/locations/page.tsx`
+- `src/app/locations/norterra/page.tsx`
+- `src/app/locations/peoria/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/app/faq/page.tsx`
+- `src/components/sections/FAQAccordion.tsx`
+
+### Verification
+- `npm run build` passes clean (Next build + `next-sitemap`).

@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ServiceCards() {
   return (
-    <section id="services" className="bg-brand-dark py-14 md:py-20">
+    <section id="services" className="bg-brand-dark py-16 md:py-24">
       <div className="container-shell space-y-10">
         <MotionReveal>
           <SectionHeading

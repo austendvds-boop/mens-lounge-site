@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-brand-dark py-28 md:py-36">
+    <section className="relative isolate overflow-hidden bg-brand-dark py-32 md:py-40">
       {/* PLACEHOLDER: Replace with owner-supplied photo. Source: https://www.pexels.com/photo/the-interior-of-a-barber-shop-7518728/ */}
       <Image
         src="/images/hero/barbershop-interior-01.jpg"

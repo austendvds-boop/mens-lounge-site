@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-brand-dark-alt py-14 md:py-20">
+    <section id="testimonials" className="bg-brand-dark-alt py-16 md:py-24">
       <div className="container-shell space-y-10">
         <MotionReveal>
           <SectionHeading

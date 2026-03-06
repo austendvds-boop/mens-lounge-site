@@ -2,7 +2,7 @@ import { MotionReveal } from "@/components/motion/MotionReveal";
 
 export function LeadCapture() {
   return (
-    <section className="border-t-2 border-brand-gold bg-brand-dark-alt py-14 md:py-16">
+    <section className="border-t-2 border-brand-gold bg-brand-dark-alt py-16 md:py-20">
       <MotionReveal className="container-shell">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-3xl font-bold text-brand-cream md:text-4xl">

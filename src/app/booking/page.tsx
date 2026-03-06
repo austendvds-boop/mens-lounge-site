@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { TrackedButton } from "@/components/analytics/TrackedButton";
 import { MotionReveal } from "@/components/motion/MotionReveal";
-import { CTABanner } from "@/components/sections/CTABanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { locations } from "@/data/locations";
 import { NORTERRA_BOOKING_URL, PEORIA_BOOKING_URL } from "@/lib/constants";
@@ -74,7 +73,6 @@ export default function BookingPage() {
         </div>
       </section>
 
-      <CTABanner />
     </>
   );
 }

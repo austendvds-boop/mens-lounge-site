@@ -1,19 +1,5 @@
 # Ralph Context
 
-## Batch 0 Critical Fixes + Hero Copy — Retry 2 Build Gate Pass — 2026-03-06
-
-### Files created/modified
-- `docs/ralph-context.md`
-
-### Key exports
-- No new exports.
-- Re-verified `src/components/sections/Hero.tsx` is correct with the requested copy and heading class scale.
-- Re-verified `next.config.js` still includes `images: { unoptimized: true }`.
-
-### Gotchas for next batch
-- Transient Next.js ENOENT build errors for missing `.next\\server\\pages-manifest.json`/`_app.js.nft.json` can occur on this Windows setup; deleting `.next` (and optionally `out`) before rebuild resolves it.
-- No additional Hero or config edits were needed in this retry; avoid unnecessary churn in those files.
-
 ## Batch 1 Structure Overhaul — 2026-03-06
 
 ### Files created/modified
@@ -54,3 +40,26 @@
 ### Gotchas for next batch
 - Testimonials intentionally skip the last dataset item (`testimonials[4]`) in the 3-card grid; if all five are needed later, adjust slice logic.
 - Shared `Button` component now uses `rounded-md`; check any remaining one-off buttons for visual consistency if more sections are restyled.
+
+## Batch 3 Booking Simplification + Mobile Spacing — 2026-03-06
+
+### Files created/modified
+- `src/app/booking/page.tsx`
+- `src/components/sections/ServiceCards.tsx`
+- `src/components/sections/Testimonials.tsx`
+- `src/components/sections/LocationCards.tsx`
+- `src/components/sections/LeadCapture.tsx`
+- `src/components/sections/Hero.tsx`
+- `docs/ralph-context.md`
+
+### Key exports
+- No new exports.
+- Booking page no longer renders `CTABanner`; location cards and walk-in notice remain unchanged.
+- Updated section spacing tokens:
+  - `ServiceCards`, `Testimonials`, `LocationCards`: `py-16 md:py-24`
+  - `LeadCapture`: `py-16 md:py-20`
+  - `Hero`: `py-32 md:py-40`
+
+### Gotchas for next batch
+- `MobileNav` close-on-tap behavior is still intact for all nav links and the booking button (`onClick={() => setIsOpen(false)}` present); no changes were required.
+- Build/export currently passes with `out/index.html` at 71,711 bytes; if future visual edits reduce payload, keep index output above the >10KB verification threshold used in this batch.

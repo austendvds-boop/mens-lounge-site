@@ -22,7 +22,7 @@ export function ServiceCards() {
         <div className="grid gap-6 md:grid-cols-3">
           {featuredServices.slice(0, 3).map((service, index) => (
             <MotionReveal key={service.title} delayMs={index * 70}>
-              <Card className="overflow-hidden p-0">
+              <Card className="overflow-hidden p-0 border border-brand-gold/20 hover:border-brand-gold/60 hover:-translate-y-1 transition-all duration-200">
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={service.image}

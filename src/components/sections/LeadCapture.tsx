@@ -38,9 +38,9 @@ export function LeadCapture() {
             <div className="md:col-span-2">
               <button
                 type="submit"
-                className="motion-surface inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-gold-light"
+                className="motion-surface inline-flex items-center justify-center rounded-md bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-gold-light"
               >
-                Claim My Discount
+                Send My Discount
               </button>
             </div>
           </form>

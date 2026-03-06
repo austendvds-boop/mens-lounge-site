@@ -1,22 +1,5 @@
 # Ralph Context
 
-## Batch 0 Critical Fixes + Hero Copy — Retry Commit/Verification — 2026-03-06
-
-### Files created/modified
-- `docs/ralph-context.md`
-
-### Key exports
-- No new exports.
-- Verified `src/components/sections/Hero.tsx` already contains:
-  - Headline: `Where Phoenix men get their edge back.`
-  - Subhead: `Classic cuts, hot towel shaves, and precision beard work — at two Valley locations.`
-  - Heading classes: `font-display text-3xl font-bold leading-tight text-brand-cream sm:text-4xl md:text-5xl lg:text-7xl`
-- Verified `next.config.js` still contains `images: { unoptimized: true }`.
-
-### Gotchas for next batch
-- Keep the responsive hero heading scale as-is to prevent extra wrapping on 375px-width screens.
-- For Windows builds, if `next build` throws transient `.next\server\pages\_app.js.nft.json` ENOENT, clear `.next` and rerun build.
-
 ## Batch 0 Critical Fixes + Hero Copy — Retry 2 Build Gate Pass — 2026-03-06
 
 ### Files created/modified
@@ -50,3 +33,24 @@
 ### Gotchas for next batch
 - `SectionHeading` eyebrow text now renders with `eyebrow.toLowerCase()` and `fontVariant: 'small-caps'`; pass plain words/phrases (not intentional mixed-case branding) for predictable display.
 - Keep `LeadCapture` button label unchanged for now (`Claim My Discount`) per batch boundary; CTA/button copy updates are deferred to B2.
+
+## Batch 2 Component Polish — 2026-03-06
+
+### Files created/modified
+- `src/components/sections/ServiceCards.tsx`
+- `src/components/sections/Testimonials.tsx`
+- `src/components/ui/Button.tsx`
+- `src/components/sections/LeadCapture.tsx`
+- `src/components/sections/CTABanner.tsx`
+- `docs/ralph-context.md`
+
+### Key exports
+- No new exports.
+- `Testimonials` now renders:
+  - aggregate review stat under the section heading,
+  - featured pull-quote from `testimonials[0]`,
+  - supporting cards from `testimonials.slice(1, 4)`.
+
+### Gotchas for next batch
+- Testimonials intentionally skip the last dataset item (`testimonials[4]`) in the 3-card grid; if all five are needed later, adjust slice logic.
+- Shared `Button` component now uses `rounded-md`; check any remaining one-off buttons for visual consistency if more sections are restyled.

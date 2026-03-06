@@ -7,7 +7,7 @@ export function CTABanner() {
       <MotionReveal className="container-shell">
         <div className="motion-surface rounded-2xl border border-brand-gold/40 bg-gradient-to-r from-brand-dark-alt to-brand-dark px-8 py-12 text-center md:px-12">
           <h2 className="font-display text-3xl font-bold text-brand-cream md:text-5xl">
-            Ready to Look Your Best?
+            Your next great cut is one click away.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-brand-slate md:text-lg">
             Lock in your appointment now and walk out with a fresh, confident look.

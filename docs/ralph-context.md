@@ -146,6 +146,21 @@
 - Verified phone + email links in `out/contact/index.html`
 - Verified FAQ analytics hook present in built chunk (`faq_expand`)
 
+## Batch 3 — Polish + Deploy Readiness (Retry Completion) — 2026-03-05
+
+### Completed scope
+- Added OG/Twitter metadata helper and wired route metadata to use it.
+- Added accessibility polish (skip link, stronger focus states, mobile-nav dialog controls, accordion focus handling).
+- Applied performance cleanup (hero preload, lazy image loading below fold, CLS-safe image sizing).
+- Added branded 404 page with Home + Book CTAs.
+- Finalized sitemap/robots generation using `next-sitemap` (`next-sitemap.config.js`, build script update).
+- Updated `docs/UI-VERIFICATION.md` from architect spec and refreshed README deploy/smoke-test guidance.
+
+### Verification
+- `npm run build` passed clean (including `next-sitemap` run).
+- Internal link scan on `out/**/*.html` found zero broken internal links.
+- CTA checks passed on major sections (`/`, `/booking`, `/locations`, `/services`) for booking URL + phone CTA presence.
+
 ## Batch 3 — Final Polish + Deploy Readiness (2026-03-05)
 
 ### Final-pass updates completed

@@ -30,6 +30,19 @@
 - [x] Update docs (`CODER-CONTEXT`, `ralph-context`, `UI-VERIFICATION`, `ENV-VARS`)
 - [x] Commit and push to `origin/main`
 
+## Batch 3 — Polish + Deploy Readiness
+
+- [x] Read blueprint + UI verification spec before final pass
+- [x] Add shared OG/social metadata helper and wire into all major routes
+- [x] Add skip link, focus-visible styles, and mobile-nav accessibility refinements
+- [x] Apply performance polish (hero preload, lazy loaded below-fold images, CLS-safe image sizing)
+- [x] Add branded 404 page (`src/app/not-found.tsx`)
+- [x] Finalize sitemap/robots generation with `next-sitemap`
+- [x] Create/update `docs/UI-VERIFICATION.md` from architect spec
+- [x] Update README deploy instructions and smoke-test checklist
+- [x] Run verification (`npm run build`, internal link checks, booking CTA checks)
+- [x] Update docs (`CODER-CONTEXT`, `ralph-context`) and push `origin/main`
+
 ## Batch 3 — Final Polish + Deploy Readiness
 
 - [x] Add reusable page metadata helper with OG + Twitter social cards

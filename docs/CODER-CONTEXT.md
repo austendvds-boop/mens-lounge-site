@@ -180,6 +180,54 @@
 - Confirmed phone + email CTA hrefs in `out/contact/index.html`.
 - Confirmed FAQ analytics hook bundle includes `faq_expand` in `out/_next/static/chunks/app/faq/page-*.js`.
 
+## 2026-03-05 — Batch 3 Polish + Deploy Readiness (retry completion)
+
+### What changed
+- Added shared social metadata builder (`src/lib/metadata.ts`) and applied it across app routes for OG/Twitter coverage.
+- Updated root layout metadata and added hero image preload in `<head>`.
+- Added accessibility polish:
+  - skip-to-content link in `src/app/layout.tsx`
+  - global `:focus-visible` treatment in `src/app/globals.css`
+  - improved mobile menu semantics/body scroll lock in `src/components/layout/MobileNav.tsx`
+  - accordion keyboard/focus semantics in `src/components/sections/FAQAccordion.tsx`
+- Applied performance polish by enforcing lazy loading on below-the-fold `next/image` usage while keeping hero image high-priority.
+- Added branded `src/app/not-found.tsx` with Home + Book CTAs.
+- Finalized sitemap + robots generation using `next-sitemap`:
+  - added `next-sitemap.config.js`
+  - updated build script to `next build && next-sitemap`
+- Updated deployment/readiness docs:
+  - refreshed `docs/UI-VERIFICATION.md` from architect verification spec
+  - expanded `README.md` deploy/smoke-test instructions
+  - marked Batch 3 tasks complete in `docs/implementation-plan.md`
+
+### Key files touched
+- `package.json`
+- `next-sitemap.config.js`
+- `README.md`
+- `docs/UI-VERIFICATION.md`
+- `docs/implementation-plan.md`
+- `src/lib/metadata.ts`
+- `src/app/layout.tsx`
+- `src/app/not-found.tsx`
+- `src/app/globals.css`
+- `src/components/layout/MobileNav.tsx`
+- `src/components/sections/FAQAccordion.tsx`
+- `src/components/sections/Hero.tsx`
+- `src/components/sections/LocationCards.tsx`
+- `src/components/sections/ServiceTeaser.tsx`
+- `src/app/locations/page.tsx`
+- `src/app/locations/norterra/page.tsx`
+- `src/app/locations/peoria/page.tsx`
+- `src/app/services/page.tsx`
+- `src/app/booking/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/app/faq/page.tsx`
+
+### Verification
+- `npm run build` passes clean (Next build + `next-sitemap` generation).
+- Internal link sweep across exported HTML passed (no broken internal links).
+- CTA assertions passed for major sections (`/`, `/booking`, `/locations`, `/services`) including booking URL + phone links.
+
 ## 2026-03-05 — Batch 3 Final Polish + Deploy Readiness
 
 ### What changed

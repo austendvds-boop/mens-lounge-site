@@ -25,16 +25,16 @@ export function Hero() {
             MEN&apos;S LOUNGE BARBERSHOP
           </p>
           <h1
-            className="motion-fade-up mt-5 font-display text-5xl font-bold leading-tight text-brand-cream md:text-7xl"
+            className="motion-fade-up mt-5 font-display text-3xl font-bold leading-tight text-brand-cream sm:text-4xl md:text-5xl lg:text-7xl"
             style={{ "--reveal-delay": "120ms" } as CSSProperties}
           >
-            Phoenix&apos;s Premier Men&apos;s Grooming Experience
+            Where Phoenix men get their edge back.
           </h1>
           <p
             className="motion-fade-up mx-auto mt-6 max-w-2xl text-lg text-brand-cream/90"
             style={{ "--reveal-delay": "190ms" } as CSSProperties}
           >
-            Classic cuts, hot towel shaves, and beard grooming. Two Valley locations, walk-ins welcome.
+            Classic cuts, hot towel shaves, and precision beard work — at two Valley locations.
           </p>
           <div
             className="motion-fade-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"

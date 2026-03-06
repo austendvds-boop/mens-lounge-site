@@ -4,15 +4,18 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SITE_URL } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Men's Lounge Barbershop · Phoenix & Peoria",
-  description:
+  ...buildPageMetadata(
+    "Men's Lounge Barbershop · Phoenix & Peoria",
     "Phoenix's premier men's barbershop. Classic cuts, hot towel shaves, walk-ins welcome. Two locations on Happy Valley Rd. Book online now.",
+    "/",
+  ),
   icons: {
     icon: "/favicon.ico",
   },
@@ -25,6 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/barbershop-interior-01.jpg"
+          fetchPriority="high"
+        />
+      </head>
       <body className={inter.className}>
         <a
           href="#main-content"

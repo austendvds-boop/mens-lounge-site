@@ -6,14 +6,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 import { locations } from "@/data/locations";
 import { MAP_EMBED_URLS } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 
 const norterra = locations.find((location) => location.slug === "norterra")!;
 
-export const metadata: Metadata = {
-  title: "Norterra Location · Men's Lounge Barbershop Phoenix",
-  description:
-    "Men's Lounge Barbershop at Norterra — 2501 W Happy Valley Rd, Phoenix. Walk-ins welcome. Book your cut online.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Norterra Location · Men's Lounge Barbershop Phoenix",
+  "Men's Lounge Barbershop at Norterra — 2501 W Happy Valley Rd, Phoenix. Walk-ins welcome. Book your cut online.",
+  "/locations/norterra",
+);
 
 export default function NorterraLocationPage() {
   return (

@@ -23,13 +23,15 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
     <div className="space-y-4">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
+        const answerId = `faq-answer-${index}`;
 
         return (
           <div key={item.question} className="rounded-xl border border-brand-navy/15 bg-white p-5 shadow-sm">
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-4 text-left"
+              className="flex w-full items-center justify-between gap-4 text-left focus-visible:ring-2 focus-visible:ring-brand-navy focus-visible:ring-offset-2"
               aria-expanded={isOpen}
+              aria-controls={answerId}
               onClick={() => {
                 const nextOpen = isOpen ? null : index;
                 setOpenIndex(nextOpen);
@@ -45,7 +47,11 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               </span>
             </button>
 
-            {isOpen ? <p className="mt-4 text-sm text-brand-slate md:text-base">{item.answer}</p> : null}
+            {isOpen ? (
+              <p id={answerId} className="mt-4 text-sm text-brand-slate md:text-base">
+                {item.answer}
+              </p>
+            ) : null}
           </div>
         );
       })}

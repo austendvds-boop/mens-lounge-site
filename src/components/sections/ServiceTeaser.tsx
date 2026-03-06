@@ -20,7 +20,14 @@ export function ServiceTeaser() {
             <Card key={service.title} className="overflow-hidden p-0">
               <div className="relative aspect-[4/3]">
                 {/* PLACEHOLDER: Replace with owner-supplied photo. Sources: 12304508, 7697492, 3998421, 7697360 on pexels.com */}
-                <Image src={service.image} alt={service.title} fill className="object-cover" />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-4 p-6">
                 <div className="flex items-start justify-between gap-3">
@@ -28,7 +35,7 @@ export function ServiceTeaser() {
                   <Badge>{service.priceLabel}</Badge>
                 </div>
                 <p className="text-sm text-brand-slate">{service.description}</p>
-                <a href="/#services" className="text-sm font-semibold text-brand-navy hover:underline">
+                <a href="/services" className="text-sm font-semibold text-brand-navy hover:underline">
                   Learn More →
                 </a>
               </div>

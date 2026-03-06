@@ -5,12 +5,13 @@ import { DiscountBanner } from "@/components/sections/DiscountBanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { serviceMenu } from "@/data/services";
 import { PRIMARY_BOOKING_URL } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Services & Prices · Men's Lounge Barbershop",
-  description:
-    "Full service menu — haircuts from $23, hot towel shaves, beard trims, kids cuts, and premium packages. Military discounts available.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Services & Prices · Men's Lounge Barbershop",
+  "Full service menu — haircuts from $23, hot towel shaves, beard trims, kids cuts, and premium packages. Military discounts available.",
+  "/services",
+);
 
 export default function ServicesPage() {
   return (

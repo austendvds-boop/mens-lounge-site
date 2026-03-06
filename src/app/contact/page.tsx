@@ -4,12 +4,13 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 import { locations } from "@/data/locations";
 import { CONTACT_FORM_ENDPOINT, MAP_EMBED_URLS } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Contact Us · Men's Lounge Barbershop",
-  description:
-    "Get in touch with Men's Lounge Barbershop. Two Phoenix-area locations. Call, email, or visit us.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Contact Us · Men's Lounge Barbershop",
+  "Get in touch with Men's Lounge Barbershop. Two Phoenix-area locations. Call, email, or visit us.",
+  "/contact",
+);
 
 export default function ContactPage() {
   return (

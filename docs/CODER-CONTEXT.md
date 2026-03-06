@@ -154,3 +154,59 @@
 - Verified booking link and both phone CTA links in built `/booking` output.
 - Verified both phone and email CTA links in built `/contact` output.
 
+## 2026-03-05 — Batch 2 Retry (push gate repair)
+
+### What changed
+- Fixed interior-page copy/metadata rendering glitches introduced by prior encoding drift:
+  - Restored punctuation on location metadata titles/descriptions (`·` and `—`) for `/locations/norterra` and `/locations/peoria`.
+  - Restored Norterra eyebrow copy to `Norterra — Phoenix`.
+  - Corrected broken arrow/link copy on `/locations` and `/faq` (`→`).
+  - Updated FAQ metadata punctuation to match blueprint style.
+- Re-verified fallback TODO messaging for Peoria booking link remains visible when Peoria URL falls back to Norterra URL.
+
+### Files touched in retry
+- `src/app/locations/page.tsx`
+- `src/app/locations/norterra/page.tsx`
+- `src/app/locations/peoria/page.tsx`
+- `src/app/faq/page.tsx`
+- `docs/CODER-CONTEXT.md`
+- `docs/ralph-context.md`
+- `docs/UI-VERIFICATION.md`
+
+### Verification rerun
+- `npm run build` passes.
+- Confirmed exported routes exist for all required interior pages under `out/`.
+- Confirmed booking + phone CTA hrefs in `out/booking/index.html`.
+- Confirmed phone + email CTA hrefs in `out/contact/index.html`.
+- Confirmed FAQ analytics hook bundle includes `faq_expand` in `out/_next/static/chunks/app/faq/page-*.js`.
+
+## 2026-03-05 — Batch 3 Final Polish + Deploy Readiness
+
+### What changed
+- Added shared metadata helper at `src/lib/metadata.ts` and wired all major routes to include canonical, Open Graph, and Twitter card metadata with `public/images/og-image.jpg`.
+- Added explicit hero image preload in `src/app/layout.tsx` and ensured Inter uses `display: "swap"`.
+- Hardened accessibility:
+  - Added global `:focus-visible` outline in `src/app/globals.css`.
+  - Improved mobile nav semantics (`aria-expanded`, `aria-controls`, dialog role, Escape to close) in `src/components/layout/MobileNav.tsx`.
+  - Kept skip-to-content link in layout and ARIA wiring in FAQ accordion.
+- Improved image performance hygiene:
+  - Added responsive `sizes` and `loading="lazy"` on non-hero `next/image` usages in home/location card sections.
+  - Kept aspect-ratio wrappers for CLS-safe rendering.
+- Added branded 404 page at `src/app/not-found.tsx` with Home + Booking CTAs.
+- Added sitemap automation:
+  - Installed `next-sitemap`.
+  - Added `next-sitemap.config.js`.
+  - Added `postbuild` script in `package.json` so build generates final `out/robots.txt`, `out/sitemap.xml`, `out/sitemap-0.xml`.
+- Replaced `docs/UI-VERIFICATION.md` with the architect-provided verification spec.
+- Rewrote `README.md` with project-specific build/deploy steps and smoke-test checklist.
+- Updated `docs/implementation-plan.md` with a completed Batch 3 checklist.
+
+### Verification
+- `npm run build` passes clean (including `next-sitemap` postbuild generation).
+- Internal link crawl across exported HTML: `NO_BROKEN_INTERNAL_LINKS`.
+- Booking CTA validation across major routes: `BOOKING_CTA_CHECKS_PASS`.
+- Verified generated SEO files in build output:
+  - `out/robots.txt`
+  - `out/sitemap.xml`
+  - `out/sitemap-0.xml` (includes all required routes)
+

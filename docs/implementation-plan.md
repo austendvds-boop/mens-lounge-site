@@ -30,4 +30,19 @@
 - [x] Update docs (`CODER-CONTEXT`, `ralph-context`, `UI-VERIFICATION`, `ENV-VARS`)
 - [x] Commit and push to `origin/main`
 
+## Batch 3 — Final Polish + Deploy Readiness
+
+- [x] Add reusable page metadata helper with OG + Twitter social cards
+- [x] Wire all major routes to shared metadata helper
+- [x] Add social image and hero preload
+- [x] Improve accessibility (skip link, mobile nav ARIA states/dialog semantics, FAQ ARIA IDs)
+- [x] Improve image loading strategy (lazy + responsive sizes + CLS-safe wrappers)
+- [x] Add branded `not-found.tsx` page
+- [x] Add `next-sitemap` and configure sitemap/robots generation
+- [x] Replace docs/UI-VERIFICATION.md with architect verification spec
+- [x] Update README with deploy + verification steps
+- [x] Run verification (`npm run build`, internal link crawl, booking CTA checks)
+- [x] Update docs (`CODER-CONTEXT`, `ralph-context`, `implementation-plan`)
+- [ ] Commit and push to `origin/main`
+
 

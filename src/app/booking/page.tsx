@@ -4,14 +4,15 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { locations } from "@/data/locations";
 import { NORTERRA_BOOKING_URL, PEORIA_BOOKING_URL } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 
 const isPeoriaFallbackLink = PEORIA_BOOKING_URL === NORTERRA_BOOKING_URL;
 
-export const metadata: Metadata = {
-  title: "Book Now · Men's Lounge Barbershop",
-  description:
-    "Book your appointment online at Men's Lounge Barbershop. Pick your location, choose your barber, and skip the wait.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Book Now · Men's Lounge Barbershop",
+  "Book your appointment online at Men's Lounge Barbershop. Pick your location, choose your barber, and skip the wait.",
+  "/booking",
+);
 
 export default function BookingPage() {
   return (

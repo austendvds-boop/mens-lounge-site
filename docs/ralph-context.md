@@ -127,3 +127,48 @@
 - Confirmed booking URL and phone links in `/booking` output.
 - Confirmed phone and email CTAs in `/contact` output.
 
+## Batch 2 Retry — Push Gate Repair (2026-03-05)
+
+### Retry updates completed
+- Fixed interior-route copy artifacts caused by encoding/punctuation drift:
+  - `/locations/norterra` metadata/title copy punctuation and eyebrow text.
+  - `/locations/peoria` metadata/title copy punctuation.
+  - `/locations` detail-link arrow copy.
+  - `/faq` metadata punctuation, callout separator, and contact-link arrow copy.
+- Kept required Peoria fallback behavior intact:
+  - Peoria booking uses Norterra URL fallback when no Peoria env URL is set.
+  - Explicit TODO notice remains visible on booking/location pages.
+
+### Verification rerun
+- `npm run build` → pass
+- Verified all required interior routes exported under `out/`
+- Verified booking + phone links in `out/booking/index.html`
+- Verified phone + email links in `out/contact/index.html`
+- Verified FAQ analytics hook present in built chunk (`faq_expand`)
+
+## Batch 3 — Final Polish + Deploy Readiness (2026-03-05)
+
+### Final-pass updates completed
+- Added shared metadata helper (`src/lib/metadata.ts`) and moved major route metadata to it so each page now has canonical + OG + Twitter card data.
+- Wired social image usage to `public/images/og-image.jpg` and preloaded hero image in root layout.
+- Added branded 404 page (`src/app/not-found.tsx`) with Home/Booking recovery CTAs.
+- Added sitemap/robots automation with `next-sitemap`:
+  - `next-sitemap.config.js`
+  - `package.json` `postbuild` script
+  - generated build artifacts in `out/robots.txt`, `out/sitemap.xml`, `out/sitemap-0.xml`
+- Accessibility hardening:
+  - Global `:focus-visible` styles in `src/app/globals.css`
+  - Mobile nav ARIA/dialog semantics + Escape-close behavior
+  - Preserved skip-link and FAQ ARIA relationships
+- Performance polish:
+  - Added image `sizes` + `loading="lazy"` for non-hero image components
+  - Maintained fixed aspect-ratio wrappers for CLS-safe image rendering
+- Replaced `docs/UI-VERIFICATION.md` with architect’s screenshot verification spec.
+- Updated `README.md` with real build/deploy workflow and route smoke test steps.
+- Updated `docs/implementation-plan.md` with Batch 3 completion checklist.
+
+### Final verification rerun
+- `npm run build` → pass (Next build + `next-sitemap` postbuild)
+- Internal link crawl of exported site → `NO_BROKEN_INTERNAL_LINKS`
+- Booking CTA checks across major sections/routes → `BOOKING_CTA_CHECKS_PASS`
+

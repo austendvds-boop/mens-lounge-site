@@ -19,8 +19,20 @@ export function MobileNav({ links }: MobileNavProps) {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("keydown", onKeyDown);
+    }
+
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen]);
 
@@ -30,6 +42,8 @@ export function MobileNav({ links }: MobileNavProps) {
         type="button"
         onClick={() => setIsOpen((value) => !value)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isOpen}
+        aria-controls="mobile-nav-drawer"
         className="rounded-md border border-brand-navy/20 p-2 text-brand-navy"
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -43,7 +57,13 @@ export function MobileNav({ links }: MobileNavProps) {
             aria-label="Close menu"
             onClick={() => setIsOpen(false)}
           />
-          <div className="fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm bg-white p-6 shadow-2xl">
+          <div
+            id="mobile-nav-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile menu"
+            className="fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm bg-white p-6 shadow-2xl"
+          >
             <div className="mb-8 flex items-center justify-between">
               <p className="text-lg font-bold text-brand-navy">Menu</p>
               <button

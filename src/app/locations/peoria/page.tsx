@@ -6,16 +6,17 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 import { locations } from "@/data/locations";
 import { MAP_EMBED_URLS, NORTERRA_BOOKING_URL, PEORIA_BOOKING_URL } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 
 const peoria = locations.find((location) => location.slug === "peoria")!;
 
 const isPeoriaFallbackLink = PEORIA_BOOKING_URL === NORTERRA_BOOKING_URL;
 
-export const metadata: Metadata = {
-  title: "Peoria Location · Men's Lounge Barbershop",
-  description:
-    "Men's Lounge Barbershop Peoria — 6791 W Happy Valley Rd. Professional haircuts, shaves, and beard trims. Walk-ins welcome.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Peoria Location · Men's Lounge Barbershop",
+  "Men's Lounge Barbershop Peoria — 6791 W Happy Valley Rd. Professional haircuts, shaves, and beard trims. Walk-ins welcome.",
+  "/locations/peoria",
+);
 
 export default function PeoriaLocationPage() {
   return (

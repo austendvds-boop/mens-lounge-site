@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 3px solid #1b2a4a;
+  outline-offset: 3px;
+}
+
 @layer base {
   body {
     @apply font-sans antialiased;

@@ -1,37 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Men's Lounge Barbershop Website
 
-## Getting Started
+Marketing site for Men's Lounge Barbershop (Norterra + Peoria), built with Next.js 14 App Router + TypeScript + Tailwind.
 
-First, run the development server:
+## Tech Stack
+- Next.js 14 (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- Static export (`next build` -> `out/`)
+
+## Local Development
+```bash
+npm install
+npm run dev
+```
+Open `http://localhost:3000`.
+
+## Build
+```bash
+npm run build
+```
+This runs:
+1. `next build`
+2. `next-sitemap` (postbuild) to generate sitemap/robots in `out/`
+
+## Environment Variables
+Create `.env.local` as needed:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SITE_URL=https://mensloungebarbershop.com
+NEXT_PUBLIC_SQUIRE_NORTERRA_URL=https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix
+NEXT_PUBLIC_SQUIRE_PEORIA_URL=
+NEXT_PUBLIC_GA_ID=
+NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_GOOGLE_MAPS_NORTERRA=
+NEXT_PUBLIC_GOOGLE_MAPS_PEORIA=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If `NEXT_PUBLIC_SQUIRE_PEORIA_URL` is empty, Peoria booking falls back to Norterra.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy (Vercel)
+1. Push changes to `main`.
+2. Vercel auto-deploys from GitHub.
+3. Confirm deploy is green in Vercel.
+4. Smoke test these routes:
+   - `/`
+   - `/locations`
+   - `/locations/norterra`
+   - `/locations/peoria`
+   - `/services`
+   - `/booking`
+   - `/contact`
+   - `/faq`
+   - missing route -> branded 404
+5. Verify SEO files:
+   - `/robots.txt`
+   - `/sitemap.xml`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
+## Notes
+- Social sharing image: `public/images/og-image.jpg`
+- Global metadata + OG/Twitter tags are defined via `src/lib/metadata.ts`
+- Replace placeholder images/logo when owner assets are available

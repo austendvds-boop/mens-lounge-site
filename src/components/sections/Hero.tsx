@@ -10,6 +10,7 @@ export function Hero() {
         alt="Interior of Men's Lounge Barbershop"
         fill
         priority
+        sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-brand-navy/70" />

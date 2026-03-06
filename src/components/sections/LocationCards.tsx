@@ -21,7 +21,14 @@ export function LocationCards() {
             <Card key={location.slug} className="overflow-hidden p-0">
               <div className="relative aspect-[16/9]">
                 {/* PLACEHOLDER: Replace with owner-supplied location photo. */}
-                <Image src={location.image} alt={`${location.title} location`} fill className="object-cover" />
+                <Image
+                  src={location.image}
+                  alt={`${location.title} location`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
               </div>
 
               <div className="space-y-4 p-6">

@@ -1,80 +1,212 @@
-# UI Verification
+# UI-VERIFICATION.md — Men's Lounge Barbershop
 
-## Batch 1 (2026-03-05)
+**Purpose:** Post-deploy visual QA checklist for Steve screenshots.
+**Breakpoints:** 375px (mobile) + 1440px (desktop) for every page.
 
-### Route: `/`
-- Header is sticky and shows logo, nav links, and Book Now button.
-- Mobile menu opens/closes correctly and includes Book Now CTA.
-- Hero shows headline/subhead copy exactly:
-  - "Phoenix's Premier Men's Barbershop"
-  - "Classic cuts. Hot towel shaves. Two locations. Walk-ins welcome."
-- Location cards show both Norterra and Peoria with exact addresses, phones, and hours.
-- Service teaser shows 4 cards with exact titles/prices/descriptions.
-- Testimonials render all 5 quotes with star row.
-- Discount banner copy appears with shield icon.
-- CTA banner includes Book Now + both click-to-call buttons.
-- Footer shows quick links and contact numbers.
+---
 
-### Link checks
-- Every "Book" button points to: `https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix` (Peoria can override via env later).
-- Phone links dial correct numbers.
-- Direction links open Google Maps for each location.
+## Global Elements (Check on Every Page)
 
-## Retry Verification Addendum (2026-03-05)
-- `SectionHeading` props render correctly on all home sections that pass `description` and `centered`.
-- Service teaser card link copy renders as `Learn More →`.
-- Testimonial cards render visible 5-star row (`★★★★★`).
-- Hero and footer copy render apostrophes correctly after lint-safe escaping.
+### Header
+- [ ] Logo visible top-left, links to home
+- [ ] Nav links visible on desktop: Home, Locations, Services, Booking, Contact, FAQ
+- [ ] "Book Now" button visible in header (green, high contrast)
+- [ ] Header is sticky on scroll
+- [ ] Mobile (375px): hamburger icon replaces nav links
+- [ ] Mobile: hamburger opens drawer with all nav links + Book Now CTA
+- [ ] Mobile: drawer closes on link click and overlay click
 
-## Clean-Start Rebuild Addendum (2026-03-05)
-- Hero and service images now use barbershop-relevant placeholder photography.
-- Location cards now use branded placeholder location artwork (`norterra-placeholder.svg`, `peoria-placeholder.svg`) pending owner-supplied photos.
-- All booking CTAs on `/` resolve to:
-  - `https://getsquire.com/booking/book/mens-lounge-barbershop-norterra-phoenix`
-- Home route smoke test at `http://127.0.0.1:3050/` returned `200` and contained all required booking/call links.
+### Footer
+- [ ] Three-column layout on desktop (logo+tagline, quick links, contact info)
+- [ ] Stacked on mobile
+- [ ] Phone numbers are clickable (tel: links)
+- [ ] Instagram icon links to correct URL
+- [ ] Copyright line: "© 2026 Men's Lounge Barbershop"
 
-## Batch 2 Interior Routes (2026-03-05)
+### CTAs
+- [ ] All "Book Now" / "Book Your Cut" / "Book at [Location]" buttons are green (`#1A7A4C`)
+- [ ] All booking CTAs link to Squire (open in new tab)
+- [ ] All phone numbers are click-to-call links
+- [ ] All "Get Directions" links open Google Maps
 
-### Route: `/locations`
-- Heading reads "Both Locations on Happy Valley Road".
-- Both cards show address, phone, hours table, map embed, booking button, and directions button.
-- "View full location details" links go to each location detail route.
+---
 
-### Route: `/locations/norterra`
-- Metadata/title matches Norterra SEO copy.
-- LocalBusiness schema script is present.
-- Address, contact, full hours, amenities, and popular services block render.
-- Map embed loads and both CTAs (book + directions) are clickable.
+## Page-by-Page Verification
 
-### Route: `/locations/peoria`
-- Metadata/title matches Peoria SEO copy.
-- LocalBusiness schema script is present.
-- Sunday closed note is visible.
-- Peoria booking fallback TODO note appears when peoria URL matches norterra URL.
-- Map embed loads and both CTAs (book + directions) are clickable.
+### 1. Home (`/`)
 
-### Route: `/services`
-- All 4 pricing groups render: Haircuts, Shaves & Skin Care, Color, Packages.
-- Every service row includes name + price.
-- Discount appreciation banner appears below pricing.
+**Desktop (1440px):**
+- [ ] Hero: full-viewport height, dark overlay on background image
+- [ ] Hero: headline "Phoenix's Premier Men's Barbershop" clearly readable
+- [ ] Hero: subhead visible below headline
+- [ ] Hero: two buttons side-by-side ("Book Your Cut" green, "View Services" outline)
+- [ ] Location cards: two cards side-by-side with addresses, hours, phone, CTAs
+- [ ] Service teasers: 4-card grid (Men's Haircut, Hot Towel Shave, Beard Trim, Man of the Hour)
+- [ ] Each service card shows name, price badge, one-line description
+- [ ] Testimonials: 5 reviews visible in grid layout, star ratings shown
+- [ ] Discount banner: shield icon, "$3 off" messaging, mentions military/fire/police/teachers
+- [ ] CTA banner at bottom: "Ready for a Fresh Cut?" with Book Now + phone numbers
+- [ ] Alternating section backgrounds (white / cream)
 
-### Route: `/booking`
-- Heading/subhead copy matches blueprint.
-- Two location selector cards render with Squire links opening in a new tab.
-- Walk-in note and phone line render under selector cards.
+**Mobile (375px):**
+- [ ] Hero: buttons stacked vertically
+- [ ] Location cards stacked (Norterra above Peoria)
+- [ ] Service teasers: 1-column stack or 2-column grid
+- [ ] Testimonials: scrollable or stacked
+- [ ] All text readable without horizontal scroll
+- [ ] No content overflow or clipping
 
-### Route: `/contact`
-- Two location blocks render with address, phone, email, and map embeds.
-- Contact form fields render: Name, Email, Phone (optional), Location, Message.
+### 2. Locations Overview (`/locations`)
 
-### Route: `/faq`
-- FAQ accordion includes all 10 questions.
-- Expanding a question triggers analytics hook (`faq_expand`).
-- FAQ schema script is present.
-- "Still have questions?" call links + `/contact` link render.
+**Desktop:**
+- [ ] Headline: "Both Locations on Happy Valley Road" or similar
+- [ ] Two location cards with embedded Google Maps
+- [ ] Each card: address, full hours table, phone, email, Book CTA, Get Directions
+- [ ] CTA banner at bottom
 
-### Build + link checks
-- `npm run build` passes.
-- Exported routes present in `out/` for all interior pages.
-- `/booking` export contains booking URL + both `tel:` links.
-- `/contact` export contains both `tel:` and `mailto:` links.
+**Mobile:**
+- [ ] Cards stacked vertically
+- [ ] Maps render and are interactive (pinch-zoom)
+- [ ] Hours table readable without truncation
+
+### 3. Norterra Detail (`/locations/norterra`)
+
+**Desktop:**
+- [ ] Location name prominent: "Norterra — Phoenix"
+- [ ] Full address, phone, email displayed
+- [ ] Hours table with all days (Mon-Sun)
+- [ ] Sunday shows "10:00 AM – 3:00 PM (Walk-ins Only)"
+- [ ] Amenities list (walk-ins, wheelchair, Apple Pay, credit cards)
+- [ ] Embedded Google Map
+- [ ] "Book at Norterra" CTA (green, prominent)
+- [ ] Page-specific meta title in browser tab
+
+**Mobile:**
+- [ ] All info readable, no horizontal scroll
+- [ ] CTA button full-width
+
+### 4. Peoria Detail (`/locations/peoria`)
+
+**Desktop:**
+- [ ] Same structure as Norterra
+- [ ] Sunday shows "Closed"
+- [ ] Peoria phone: (623) 440-9412
+- [ ] Peoria email: Mensloungepeoria@gmail.com
+
+**Mobile:**
+- [ ] Same checks as Norterra mobile
+
+### 5. Services (`/services`)
+
+**Desktop:**
+- [ ] Four grouped tables: Haircuts, Shaves & Skin Care, Color, Packages
+- [ ] Each row: service name left, price right-aligned
+- [ ] Package cards show included items
+- [ ] Discount banner visible: "$3 off for military, firefighters, police, teachers"
+- [ ] "Book Now" CTA after each section group
+- [ ] CTA banner at bottom
+
+**Mobile:**
+- [ ] Tables readable — service names don't truncate
+- [ ] Prices clearly visible and aligned
+- [ ] No horizontal scrolling required
+
+### 6. Booking (`/booking`)
+
+**Desktop:**
+- [ ] Headline: "Book Your Appointment"
+- [ ] Two large location cards side-by-side
+- [ ] Each card: location name, address snippet, phone, "Book at [Location]" CTA
+- [ ] CTAs are clearly buttons (not just links)
+- [ ] Walk-in messaging below cards
+- [ ] Phone numbers displayed with click-to-call
+
+**Mobile:**
+- [ ] Cards stacked
+- [ ] CTAs full-width, easy to tap (min 48px height)
+- [ ] Phone numbers easily tappable
+
+### 7. Contact (`/contact`)
+
+**Desktop:**
+- [ ] Two-column layout: Norterra left, Peoria right
+- [ ] Each has: address, phone (clickable), email (mailto), embedded Google Map
+- [ ] Contact form below: Name, Email, Phone (optional), Location dropdown, Message, Submit
+- [ ] Form submit button styled as primary CTA
+- [ ] "We usually respond within one business day" note visible
+
+**Mobile:**
+- [ ] Columns stacked (Norterra above Peoria)
+- [ ] Form fields full-width
+- [ ] Submit button full-width, 48px+ height
+
+### 8. FAQ (`/faq`)
+
+**Desktop:**
+- [ ] All 10 FAQ items displayed as expandable accordion
+- [ ] Click on question expands answer, collapses others (or toggle)
+- [ ] Answers contain the exact copy from blueprint
+- [ ] "Still have questions?" section at bottom with phone numbers + link to /contact
+- [ ] CTA banner at bottom
+
+**Mobile:**
+- [ ] Accordion works via tap
+- [ ] Questions and answers readable without truncation
+- [ ] Touch targets for expand/collapse are large enough (full row clickable)
+
+### 9. 404 Page
+
+- [ ] Branded design (not default Next.js 404)
+- [ ] Shows "Page not found" messaging
+- [ ] "Back to Home" link
+- [ ] "Book Now" CTA
+
+---
+
+## Visual Standards
+
+### Colors
+- [ ] Navy (`#1B2A4A`) used for header, text headings
+- [ ] Gold (`#C8A96E`) used for accent borders, highlights
+- [ ] Cream (`#FAF7F2`) used for alternating section backgrounds
+- [ ] Green (`#1A7A4C`) used exclusively for primary CTA buttons
+- [ ] No color clashes or low-contrast text
+
+### Typography
+- [ ] Inter font loads correctly (check network tab — Google Fonts or next/font)
+- [ ] Headings are clearly hierarchical (H1 > H2 > H3)
+- [ ] Body text is 16px, readable
+- [ ] No font fallback flash (FOUT) — Inter preloaded
+
+### Images
+- [ ] Hero background image renders (placeholder or real)
+- [ ] All placeholder images have `<!-- PLACEHOLDER -->` comments in source
+- [ ] No broken image icons
+- [ ] Images have alt text
+- [ ] Images don't cause layout shift on load
+
+### Spacing
+- [ ] Sections have consistent vertical padding (~80px desktop, ~48px mobile)
+- [ ] Cards have consistent internal padding (~24px)
+- [ ] No elements touching viewport edges on mobile (minimum 16px horizontal padding)
+
+---
+
+## Functional Checks
+
+- [ ] All internal links navigate correctly (no 404s within site)
+- [ ] All external links (Squire, Google Maps, Instagram) open in new tabs
+- [ ] Phone number tel: links trigger phone dialer on mobile
+- [ ] Email mailto: links trigger email client
+- [ ] Contact form submits (or shows placeholder message if endpoint not configured)
+- [ ] FAQ accordions expand/collapse
+- [ ] Mobile nav opens and closes
+- [ ] Page loads under 2 seconds on 3G throttle (Lighthouse)
+- [ ] No console errors in browser dev tools
+- [ ] `robots.txt` accessible at `/robots.txt`
+- [ ] `sitemap.xml` accessible at `/sitemap.xml`
+- [ ] JSON-LD schema present in page source (check via View Source or Rich Results Test)
+
+---
+
+**End of UI Verification Spec**

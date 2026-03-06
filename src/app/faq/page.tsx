@@ -4,12 +4,13 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { faqs } from "@/data/faqs";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "FAQ · Men's Lounge Barbershop",
-  description:
-    "Common questions about Men's Lounge Barbershop — walk-ins, pricing, payments, hours, and more.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "FAQ · Men's Lounge Barbershop",
+  "Common questions about Men's Lounge Barbershop — walk-ins, pricing, payments, hours, and more.",
+  "/faq",
+);
 
 const faqSchema = {
   "@context": "https://schema.org",

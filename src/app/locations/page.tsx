@@ -6,13 +6,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 import { locations } from "@/data/locations";
 import { MAP_EMBED_URLS } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/metadata";
 import { TrackedButton } from "@/components/analytics/TrackedButton";
 
-export const metadata: Metadata = {
-  title: "Our Locations · Men's Lounge Barbershop",
-  description:
-    "Visit us at Norterra (Phoenix) or Peoria. Walk-ins welcome. See hours, directions, and contact info for both locations.",
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Our Locations · Men's Lounge Barbershop",
+  "Visit us at Norterra (Phoenix) or Peoria. Walk-ins welcome. See hours, directions, and contact info for both locations.",
+  "/locations",
+);
 
 export default function LocationsPage() {
   return (
@@ -31,7 +32,14 @@ export default function LocationsPage() {
               <article key={location.slug} className="overflow-hidden rounded-xl2 border border-brand-navy/15 bg-white shadow-card">
                 <div className="relative aspect-[16/9]">
                   {/* PLACEHOLDER: Replace with owner-supplied location photo. */}
-                  <Image src={location.image} alt={`${location.title} location`} fill className="object-cover" />
+                  <Image
+                    src={location.image}
+                    alt={`${location.title} location`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="lazy"
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="space-y-5 p-6">
